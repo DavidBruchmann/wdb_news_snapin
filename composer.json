@@ -1,0 +1,27 @@
+{
+    "name": "wdb/wdb-news-snapin",
+    "type": "typo3-cms-extension",
+    "description": "Extend EXT:news with some fields",
+    "keywords": [
+        "TYPO3",
+        "extension",
+        "event",
+        "news"
+    ],
+    "authors": [
+        {
+            "name": "David Bruchmann",
+            "role": "Developer"
+        }
+    ],
+    "license": ["GPL-2.0-or-later"],
+    "require": {
+        "georgringer/news": "^7 || ^8",
+        "typo3/cms-core": "^9.5.15 || ^10.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "WDB\\WdbNewsSnapin\\": "Classes"
+        }
+    }
+}
