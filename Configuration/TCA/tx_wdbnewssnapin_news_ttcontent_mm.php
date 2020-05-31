@@ -6,19 +6,19 @@ return [
 	'ctrl' => [
 		'title'     => 'Relation table',
 		'label'     => 'Relation table',
-		'hideTable' => TRUE,
+		'hideTable' => true,
 		# 'sortby'    => 'sorting',
 	],
 	'columns' => [
 		'uid_news' => [
 			'label'  => 'News',
 			'config' => [
-				'type'          => 'select',
-				'foreign_table' => 'tx_news_domain_model_news',
+				'type'                => 'select',
+				'foreign_table'       => 'tx_news_domain_model_news',
 				'foreign_table_where' => ' AND tx_news_domain_model_news.sys_language_uid IN (0,-1)',
-				'size'          => 1,
-				'minitems'      => 0,
-				'maxitems'      => 1,
+				'size'                => 1,
+				'minitems'            => 0,
+				'maxitems'            => 1,
 			],
 		],
 		'uid_ttcontent'   => [
