@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2020-04-20T03:48:49Z" product-name="wdb_news_snapin">
+		<header/>
+		<body>
+            <trans-unit id="tx_news_domain_model_news.contentelements">
+				<source>Content Elements</source>
+			</trans-unit>
+
+            <trans-unit id="tt_content.newselements">
+				<source>News Elements</source>
+			</trans-unit>
+
+            <trans-unit id="tx_wdbnewssnapin_news_ttcontent_mm.ctrl.title">
+				<source>ttcontent_type</source>
+			</trans-unit>
+            <trans-unit id="tx_wdbnewssnapin_news_ttcontent_mm.ctrl.label">
+				<source>ttcontent_type</source>
+			</trans-unit>
+            <trans-unit id="tx_wdbnewssnapin_news_ttcontent_mm.uid_news">
+				<source>ttcontent_area</source>
+			</trans-unit>
+            <trans-unit id="tx_wdbnewssnapin_news_ttcontent_mm.uid_ttcontent">
+				<source>ttcontent_type</source>
+			</trans-unit>
+            <trans-unit id="tx_wdbnewssnapin_news_ttcontent_mm.ttcontent_area">
+				<source>ttcontent_area</source>
+			</trans-unit>
+            <trans-unit id="tx_wdbnewssnapin_news_ttcontent_mm.ttcontent_type">
+				<source>ttcontent_type</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
