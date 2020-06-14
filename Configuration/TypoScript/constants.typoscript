@@ -1,0 +1,21 @@
+plugin.tx_wdbnewssnapin {
+	settings {
+		# cat=plugin.tx_wdbnewssnapin/file; type=string; label=Path to CSS file
+        cssFile = EXT:wdb_news_snapin/Resources/Public/Css/newssnapin.css
+    }
+}
+
+## ##################################################################################
+## TAKE CARE
+## that these values are not overwritten by the default constants of plugin.tx_news
+## ##################################################################################
+plugin.tx_news {
+	view {
+		# cat=plugin.tx_news/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:wdb_news_snapin/Resources/Private/Templates/
+		# cat=plugin.tx_news/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:wdb_news_snapin/Resources/Private/Partials/
+		# cat=plugin.tx_news/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:wdb_news_snapin/Resources/Private/Layouts/
+	}
+}

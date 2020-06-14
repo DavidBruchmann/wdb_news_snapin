@@ -1,0 +1,8 @@
+<!-- Partial LeftFit start -->
+<div class="left-full">
+    <f:variable name="cObjects"><newssnapin:content layoutArea="left-full" ttContents="{newsItem.txWdbnewssnapinTtcontent}"/></f:variable>
+    <f:for each="{cObjects}" as="cObject">
+        <f:cObject typoscriptObjectPath="tt_content.{cObject.CType}" data="{cObject}" />
+    </f:for>
+</div>
+<!-- /Partial LeftFull end -->

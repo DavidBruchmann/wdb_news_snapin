@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2020-04-20T03:48:49Z" product-name="wdb_news_snapin">
+		<header/>
+		<body>
+			<trans-unit id="tx_wdbnewssnapin_ttcontent.description" xml:space="preserve">
+				<source>Additional Content Element(s) with option to display it/them in predefined layout-areas.</source>
+			</trans-unit>
+			<trans-unit id="tx_wdbnewssnapin_ttcontent.details" xml:space="preserve">
+				<source>With the button "Create new" you can create a completely new Content-Element, while with the drop-down-field in combination with the button "Create new relation" you can reference existing Content Elements.
+                All referenced Content Elements are shown together with the current news-article depending on the configuration.
+                The area where the referenced content shall be shown can be chosen in the option "Layout area" above each content-element below.</source>
+			</trans-unit>
+			<trans-unit id="tx_wdbnewssnapin_layout_area.description" xml:space="preserve">
+				<source></source>
+			</trans-unit>
+			<trans-unit id="tx_wdbnewssnapin_layout_area.details" xml:space="preserve">
+				<source></source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

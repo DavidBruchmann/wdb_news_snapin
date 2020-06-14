@@ -1,5 +1,17 @@
 <?php
 
+/*******************************************************************************************
+ * This file is part of the "wdb_news_snapin" Extension for TYPO3 CMS.
+ *
+ * Copyright:
+ *   (c) 2020 David Bruchmann, Webdevelopment Barlian Indonesia <david.bruchmann@gmail.com>
+ *
+ * This copyright notice MUST APPEAR in all copies of the script!
+ *
+ * For the full copyright and license information, please read the
+ * LICENSE.txt file that was distributed with this source code.
+ *******************************************************************************************/
+
 defined('TYPO3_MODE') or die();
 
 $ll = 'LLL:EXT:wdb_news_snapin/Resources/Private/Language/locallang_db.xlf:';
@@ -34,12 +46,6 @@ $fields = [
                     'delete'         => true,
                     'localize'       => true,
                 ],
-                # 'newRecordLinkAddTitle'           => 1,
-                # 'newRecordLinkPosition'           => 'both',
-                # 'levelLinksPosition'              => 'top',
-                # 'showSynchronizationLink'         => 1,
-                # 'showPossibleLocalizationRecords' => 1,
-                # 'showAllLocalizationLink'         => 1,
             ],
         ],
     ],

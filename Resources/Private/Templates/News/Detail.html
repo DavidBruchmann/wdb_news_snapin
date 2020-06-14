@@ -1,5 +1,6 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
 	  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+	  xmlns:newssnapin="http://typo3.org/ns/WDB/WdbNewsSnapin/ViewHelpers"
 	  xmlns:rx="http://typo3.org/ns/Reelworx/RxShariff/ViewHelper"
 	  data-namespace-typo3-fluid="true">
 
@@ -11,10 +12,216 @@
 -->
 
 <f:section name="content">
+    <f:if condition="{newsItem.txWdbnewssnapinLayout.layoutKey}">
+        <f:then>
+            <div class="tx_wdbnewssnapin {newsItem.txWdbnewssnapinLayout.layoutKey}">
+            <f:render section="{newsItem.txWdbnewssnapinLayout.layoutKey}" arguments="{_all}" />
+            </div>
+        </f:then>
+        <f:else>
+            <f:render section="newsContent" arguments="{_all}" />
+        </f:else>
+    </f:if>
+</f:section>
+
+
+
+<f:section name="top-full">
+    <f:render partial="Detail/TopFull" arguments="{_all}" />
+    <f:render section="newsContent" arguments="{_all}" />
+</f:section>
+
+<f:section name="top-full-left-fit">
+    <f:render partial="Detail/TopFull" arguments="{_all}" />
+    <div class="tx_wdbnewssnapin-row">
+      <f:render partial="Detail/LeftFit" arguments="{_all}" />
+      <f:render section="newsContent" arguments="{_all}" />
+    </div>
+</f:section>
+
+<f:section name="top-full-right-fit">
+    <f:render partial="Detail/TopFull" arguments="{_all}" />
+    <f:render section="newsContent" arguments="{_all}" />
+    <f:render partial="Detail/RightFit" arguments="{_all}" />
+</f:section>
+
+<f:section name="top-full-left-fit-right-fit">
+    <f:render partial="Detail/TopFull" arguments="{_all}" />
+    <div class="tx_wdbnewssnapin-row">
+      <f:render partial="Detail/LeftFit" arguments="{_all}" />
+      <f:render section="newsContent" arguments="{_all}" />
+      <f:render partial="Detail/RightFit" arguments="{_all}" />
+    </div>
+</f:section>
+
+<f:section name="top-full-bot-full">
+    <f:render partial="Detail/TopFull" arguments="{_all}" />
+    <f:render section="newsContent" arguments="{_all}" />
+    <f:render partial="Detail/BotFull" arguments="{_all}" />
+</f:section>
+
+<f:section name="top-full-bot-full-left-fit">
+    <f:render partial="Detail/TopFull" arguments="{_all}" />
+    <div class="tx_wdbnewssnapin-row">
+      <f:render partial="Detail/LeftFit" arguments="{_all}" />
+      <f:render section="newsContent" arguments="{_all}" />
+    </div>
+    <f:render partial="Detail/BotFull" arguments="{_all}" />
+</f:section>
+
+<f:section name="top-full-bot-full-right-fit">
+    <f:render partial="Detail/TopFull" arguments="{_all}" />
+    <div class="tx_wdbnewssnapin-row">
+      <f:render section="newsContent" arguments="{_all}" />
+      <f:render partial="Detail/RightFit" arguments="{_all}" />
+    </div>
+    <f:render partial="Detail/BotFull" arguments="{_all}" />
+</f:section>
+
+<f:section name="top-full-bot-full-left-fit-right-fit">
+    <f:render partial="Detail/TopFull" arguments="{_all}" />
+    <div class="tx_wdbnewssnapin-row">
+      <f:render partial="Detail/LeftFit" arguments="{_all}" />
+      <f:render section="newsContent" arguments="{_all}" />
+      <f:render partial="Detail/RightFit" arguments="{_all}" />
+    </div>
+    <f:render partial="Detail/BotFull" arguments="{_all}" />
+</f:section>
+
+<f:section name="bot-full">
+    <f:render section="newsContent" arguments="{_all}" />
+    <f:render partial="Detail/BotFull" arguments="{_all}" />
+</f:section>
+
+<f:section name="bot-full-left-fit">
+    <div class="tx_wdbnewssnapin-row">
+      <f:render partial="Detail/LeftFit" arguments="{_all}" />
+      <f:render section="newsContent" arguments="{_all}" />
+    </div>
+    <f:render partial="Detail/BotFull" arguments="{_all}" />
+</f:section>
+
+<f:section name="bot-full-right-fit">
+    <div class="tx_wdbnewssnapin-row">
+      <f:render section="newsContent" arguments="{_all}" />
+      <f:render partial="Detail/RightFit" arguments="{_all}" />
+    </div>
+    <f:render partial="Detail/BotFull" arguments="{_all}" />
+</f:section>
+
+<f:section name="bot-full-left-fit-right-fit">
+    <div class="tx_wdbnewssnapin-row">
+      <f:render partial="Detail/LeftFit" arguments="{_all}" />
+      <f:render section="newsContent" arguments="{_all}" />
+      <f:render partial="Detail/RightFit" arguments="{_all}" />
+    </div>
+    <f:render partial="Detail/BotFull" arguments="{_all}" />
+</f:section>
+
+<f:section name="left-full">
+    <f:render partial="Detail/LeftFull" arguments="{_all}" />
+    <f:render section="newsContent" arguments="{_all}" />
+</f:section>
+
+<f:section name="left-full-top-fit">
+    <f:render partial="Detail/LeftFull" arguments="{_all}" />
+    <div class="tx_wdbnewssnapin-col">
+      <f:render partial="Detail/TopFit" arguments="{_all}" />
+      <f:render section="newsContent" arguments="{_all}" />
+    </div>
+</f:section>
+
+<f:section name="left-full-bot-fit">
+    <div class="tx_wdbnewssnapin-row">
+      <f:render partial="Detail/LeftFull" arguments="{_all}" />
+      <f:render section="newsContent" arguments="{_all}" />
+    </div>
+    <f:render partial="Detail/BotFit" arguments="{_all}" />
+</f:section>
+
+<f:section name="left-full-top-fit-bot-fit">
+    <f:render partial="Detail/LeftFull" arguments="{_all}" />
+    <div class="tx_wdbnewssnapin-col">
+      <f:render partial="Detail/TopFit" arguments="{_all}" />
+      <f:render section="newsContent" arguments="{_all}" />
+      <f:render partial="Detail/BotFit" arguments="{_all}" />
+    </div>
+</f:section>
+
+<f:section name="left-full-right-full">
+    <f:render partial="Detail/LeftFull" arguments="{_all}" />
+    <f:render section="newsContent" arguments="{_all}" />
+    <f:render partial="Detail/RightFull" arguments="{_all}" />
+</f:section>
+
+<f:section name="left-full-right-full-top-fit">
+    <f:render partial="Detail/LeftFull" arguments="{_all}" />
+    <div class="tx_wdbnewssnapin-col">
+      <f:render partial="Detail/TopFit" arguments="{_all}" />
+      <f:render section="newsContent" arguments="{_all}" />
+    </div>
+    <f:render partial="Detail/RightFull" arguments="{_all}" />
+</f:section>
+
+<f:section name="left-full-right-full-bot-fit">
+    <f:render partial="Detail/LeftFull" arguments="{_all}" />
+    <div class="tx_wdbnewssnapin-col">
+      <f:render section="newsContent" arguments="{_all}" />
+      <f:render partial="Detail/BotFit" arguments="{_all}" />
+    </div>
+    <f:render partial="Detail/RightFull" arguments="{_all}" />
+</f:section>
+
+<f:section name="left-full-right-full-top-fit-bot-fit">
+    <f:render partial="Detail/LeftFull" arguments="{_all}" />
+    <div class="tx_wdbnewssnapin-col">
+      <f:render partial="Detail/TopFit" arguments="{_all}" />
+      <f:render section="newsContent" arguments="{_all}" />
+      <f:render partial="Detail/BotFit" arguments="{_all}" />
+    </div>
+    <f:render partial="Detail/RightFull" arguments="{_all}" />
+</f:section>
+
+<f:section name="right-full">
+    <f:render section="newsContent" arguments="{_all}" />
+    <f:render partial="Detail/RightFull" arguments="{_all}" />
+</f:section>
+
+<f:section name="right-full-top-fit">
+    <div class="tx_wdbnewssnapin-col">
+      <f:render partial="Detail/TopFit" arguments="{_all}" />
+      <f:render section="newsContent" arguments="{_all}" />
+    </div>
+    <f:render partial="Detail/RightFull" arguments="{_all}" />
+</f:section>
+
+<f:section name="right-full-bot-fit">
+    <div class="tx_wdbnewssnapin-col">
+      <f:render section="newsContent" arguments="{_all}" />
+      <f:render partial="Detail/BotFit" arguments="{_all}" />
+    </div>
+    <f:render partial="Detail/RightFull" arguments="{_all}" />
+</f:section>
+
+<f:section name="right-full-top-fit-bot-fit">
+    <div class="tx_wdbnewssnapin-col">
+      <f:render partial="Detail/TopFit" arguments="{_all}" />
+      <f:render section="newsContent" arguments="{_all}" />
+      <f:render partial="Detail/BotFit" arguments="{_all}" />
+    </div>
+    <f:render partial="Detail/RightFull" arguments="{_all}" />
+</f:section>
+
+
+<f:section name="newsContent">
+    <div class="tx_news">
 	<f:if condition="{newsItem}">
 		<f:then>
 			<n:format.nothing>
 				<n:excludeDisplayedNews newsItem="{newsItem}" />
+				<f:if condition="{settings.detail.showMetaTags}">
+					<f:render partial="Detail/Opengraph" arguments="{newsItem: newsItem, settings:settings}" />
+				</f:if>
 				<f:if condition="{newsItem.alternativeTitle}">
 					<f:then>
 						<n:titleTag>
@@ -26,9 +233,6 @@
 							<f:format.htmlentitiesDecode>{newsItem.title}</f:format.htmlentitiesDecode>
 						</n:titleTag>
 					</f:else>
-				</f:if>
-				<f:if condition="{settings.detail.showMetaTags}">
-					<f:render partial="Detail/Opengraph" arguments="{newsItem: newsItem, settings:settings}" />
 				</f:if>
 			</n:format.nothing>
 			<f:if condition="{settings.detail.showPrevNext}">
@@ -127,12 +331,14 @@
 				</n:extensionLoaded>
 			</f:if>
 
-			<f:if condition="{settings.detail.disqusShortname}">
-				<div id="disqus_thread"></div>
-				<n:social.disqus newsItem="{newsItem}"
-								 shortName="{settings.detail.disqusShortname}"
-								 link="{n:link(newsItem:newsItem, settings:settings, uriOnly:1, configuration:'{forceAbsoluteUrl:1}')}" />
-			</f:if>
+            <f:comment><![CDATA[
+            <f:if condition="{settings.detail.disqusShortname}">
+                <div id="disqus_thread"></div>
+                <n:social.disqus newsItem="{newsItem}"
+                                 shortName="{settings.detail.disqusShortname}"
+                                 link="{n:link(newsItem:newsItem, settings:settings, uriOnly:1, configuration:'{forceAbsoluteUrl:1}')}" />
+            </f:if>
+            ]]></f:comment>
 
 			<!-- related things -->
 			<div class="news-related-wrap">
@@ -210,5 +416,7 @@
 
 		</f:else>
 	</f:if>
+    </div>
 </f:section>
+
 </html>

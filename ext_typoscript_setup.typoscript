@@ -1,32 +1,48 @@
-# ==================================================================
-# - tx_news_domain_model_news.tx_wdbnewssnapin_ttcontent
-# - tx_wdbnewssnapin_news_ttcontent_mm
-# - tt_content.tx_wdbnewssnapin_news
-#
-# - tx_wdbnewssnapin_news_ttcontent_mm.tx_wdbnewssnapin_area
-# - tx_wdbnewssnapin_news_ttcontent_mm.tx_wdbnewssnapin_type
-# ==================================================================
 config.tx_extbase.persistence.classes {
+
 	WDB\WdbNewsSnapin\Domain\Model\NewsTtcontentRelation {
 		mapping {
             # recordType = 0
 			tableName = tx_wdbnewssnapin_news_ttcontent_mm
 			columns {
-				uid_news.mapOnProperty = txWdbnewssnapinNews 
+				uid_news.mapOnProperty = txWdbnewssnapinNews
 				uid_ttcontent.mapOnProperty = txWdbnewssnapinTtcontent
+                layout_area.mapOnProperty = layoutArea
 			}
 		}
 	}
+
+	WDB\WdbNewsSnapin\Domain\Model\LayoutLayoutareaRelation {
+		mapping {
+			tableName = tx_wdbnewssnapin_layout_layoutarea_mm
+			columns {
+				uid_layout.mapOnProperty = layout
+				uid_layoutarea.mapOnProperty = layoutArea
+			}
+		}
+    }
+
+	WDB\WdbNewsSnapin\Domain\Model\NewsTtcontentRelationLayoutareaRelation {
+		mapping {
+			tableName = tx_wdbnewssnapin_news_ttcontent_relation_layoutarea_mm
+			columns {
+                uid_relation = relation
+				uid_layout.mapOnProperty = layout
+				uid_layoutarea.mapOnProperty = layoutArea
+			}
+		}
+    }
+
 	WDB\WdbNewsSnapin\Domain\Model\Ttcontent {
 		mapping {
-            # recordType = 0
             tableName = tt_content
         }
     }
+
 	WDB\WdbNewsSnapin\Domain\Model\News {
 		mapping {
-            # recordType = 0
             tableName = tx_news_domain_model_news
         }
     }
+
 }

@@ -2,6 +2,21 @@
 
 namespace WDB\WdbNewsSnapin\Domain\Model;
 
+/*******************************************************************************************
+ * This file is part of the "wdb_news_snapin" Extension for TYPO3 CMS.
+ *
+ * Copyright:
+ *   (c) 2020 David Bruchmann, Webdevelopment Barlian Indonesia <david.bruchmann@gmail.com>
+ *
+ * This copyright notice MUST APPEAR in all copies of the script!
+ *
+ * For the full copyright and license information, please read the
+ * LICENSE.txt file that was distributed with this source code.
+ *******************************************************************************************/
+
+/**
+ * TtContent
+ */
 class TtContent extends \GeorgRinger\News\Domain\Model\TtContent
 {
 
@@ -15,57 +30,72 @@ class TtContent extends \GeorgRinger\News\Domain\Model\TtContent
 	/**
 	 * __construct
 	 */
-	public function __construct() {
-		//Do not remove the next line: It would break the functionality
+	public function __construct()
+    {
 		$this->initStorageObjects();
 	}
 
 	/**
-	 * Initializes all ObjectStorage properties
-	 * Do not modify this method!
-	 * It will be rewritten on each save in the extension builder
-	 * You may modify the constructor of this class instead
-	 *
+	 * Initialize all ObjectStorage properties
+     *
 	 * @return void
 	 */
-	protected function initStorageObjects() {
+	protected function initStorageObjects() : void
+    {
 		$this->txWdbnewssnapinNews = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 	}
 
 	/**
-	 * Returns the txWdbnewssnapinNews
+	 * Set ObjectStorage 'txWdbnewssnapinNews'
 	 *
 	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\WDB\WdbNewsSnapin\Domain\Model\NewsTtcontentRelation> $txWdbnewssnapinNews
 	 */
-	public function setTxWdbnewssnapinNews($txWdbnewssnapinNews) {
+	public function setTxWdbnewssnapinNews(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $txWdbnewssnapinNews) : void
+    {
 		$this->txWdbnewssnapinNews = $txWdbnewssnapinNews;
 	}
 
 	/**
-	 * Adds the defined txWdbnewssnapinNews
+	 * Add the defined $txWdbnewssnapinNewsToAdd to ObjectStorage 'txWdbnewssnapinNews'
 	 *
 	 * @param \WDB\WdbNewsSnapin\Domain\Model\NewsTtcontentRelation $txWdbnewssnapinNewsToAdd
 	 */
-	public function addTxWdbnewssnapinNews($txWdbnewssnapinNewsToAdd) {
+	public function addTxWdbnewssnapinNews(\WDB\WdbNewsSnapin\Domain\Model\NewsTtcontentRelation $txWdbnewssnapinNewsToAdd) : void
+    {
 		$this->txWdbnewssnapinNews->attach($txWdbnewssnapinNewsToAdd);
 	}
 
 	/**
-	 * Removes the defined txWdbnewssnapinNews
+	 * Remove the defined $txWdbnewssnapinNewsToRemove from ObjectStorage 'txWdbnewssnapinNews'
 	 *
 	 * @param \WDB\WdbNewsSnapin\Domain\Model\NewsTtcontentRelation $txWdbnewssnapinNewsToRemove
 	 */
-	public function removeTxWdbnewssnapinNews($txWdbnewssnapinNewsToRemove) {
+	public function removeTxWdbnewssnapinNews(\WDB\WdbNewsSnapin\Domain\Model\NewsTtcontentRelation $txWdbnewssnapinNewsToRemove) : void
+    {
 		$this->txWdbnewssnapinNews->detach($txWdbnewssnapinNewsToRemove);
 	}
 
 	/**
-	 * Returns the txWdbnewssnapinNews
+	 * Return ObjectStorage 'txWdbnewssnapinNews'
 	 *
 	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\WDB\WdbNewsSnapin\Domain\Model\NewsTtcontentRelation> $txWdbnewssnapinNews
 	 */
-	public function getTxWdbnewssnapinNews() {
+	public function getTxWdbnewssnapinNews() : \TYPO3\CMS\Extbase\Persistence\ObjectStorage
+    {
 		return $this->txWdbnewssnapinNews;
 	}
 
+    /**
+     * ------------------
+     * ADDITIONAL METHODS
+     * ------------------
+     */
+
+    /**
+     * @return string
+     */
+    public function getTableName() : string
+    {
+        return 'tt_content';
+    }
 }

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2020-04-20T03:48:49Z" product-name="wdb_news_snapin">
+		<header/>
+		<body>
+			<trans-unit id="extmng.showNewsInLayoutArea">
+				<source>Show news-records in layoutArea-records (not recommended if many news-articles exist)</source>
+			</trans-unit>
+			<trans-unit id="extmng.setLayoutFieldsReadOnly">
+				<source>Set fields of the table with layout-areas to read-only to prohibit editing in general (advised after the layout-areas are defined and in the templates integrated).</source>
+			</trans-unit>
+			<trans-unit id="extmng.setLayoutAreaFieldsReadOnly">
+				<source>setLayoutAreaFieldsReadOnly</source>
+			</trans-unit>
+			<trans-unit id="extmng.uniqueLayoutAreaKeys">
+				<source>uniqueLayoutAreaKeys</source>
+			</trans-unit>
+			<trans-unit id="extmng.restrictNewsToSysfolder">
+				<source>restrictNewsToSysfolder</source>
+			</trans-unit>
+
+			<trans-unit id="extmng.layoutRestriction">
+				<source>layoutRestriction</source>
+			</trans-unit>
+            <trans-unit id="extmng.layoutRestriction.none">
+				<source>none</source>
+			</trans-unit>
+            <trans-unit id="extmng.layoutRestriction.pages_tsconfig">
+				<source>pages_tsconfig</source>
+			</trans-unit>
+            <trans-unit id="extmng.layoutRestriction.current_pid">
+				<source>current_pid</source>
+			</trans-unit>
+            <trans-unit id="extmng.layoutRestriction.sys_folder">
+				<source>Sys-folder</source>
+			</trans-unit>
+            <trans-unit id="extmng.layoutRestriction.siteroot">
+				<source>Siteroot</source>
+			</trans-unit>
+            <trans-unit id="extmng.layoutRestriction.rootlevel">
+				<source>Rootlevel (pid=0)</source>
+			</trans-unit>
+
+            
+			<trans-unit id="extmng.layoutAreaRestriction">
+				<source>layoutAreaRestriction</source>
+			</trans-unit>
+            <trans-unit id="extmng.layoutAreaRestriction.none">
+				<source>none</source>
+			</trans-unit>
+            <trans-unit id="extmng.layoutAreaRestriction.pages_tsconfig">
+				<source>pages_tsconfig</source>
+			</trans-unit>
+            <trans-unit id="extmng.layoutAreaRestriction.current_pid">
+				<source>current_pid</source>
+			</trans-unit>
+            <trans-unit id="extmng.layoutAreaRestriction.sys_folder">
+				<source>Sys-folder</source>
+			</trans-unit>
+            <trans-unit id="extmng.layoutAreaRestriction.siteroot">
+				<source>Siteroot</source>
+			</trans-unit>
+            <trans-unit id="extmng.layoutAreaRestriction.rootlevel">
+				<source>Rootlevel (pid=0)</source>
+			</trans-unit>
+
+			<!--
+            <trans-unit id="extmng.">
+				<source></source>
+			</trans-unit>
+            -->
+		</body>
+	</file>
+</xliff>

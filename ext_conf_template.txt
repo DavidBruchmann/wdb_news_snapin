@@ -1,0 +1,25 @@
+# cat=records/enable/103; type=boolean; label=LLL:EXT:wdb_news_snapin/Resources/Private/Language/locallang_be.xlf:extmng.showNewsInLayoutArea
+showNewsInLayoutArea = 1
+
+# cat=records/enable/104; type=boolean; label=LLL:EXT:wdb_news_snapin/Resources/Private/Language/locallang_be.xlf:extmng.setLayoutFieldsReadOnly
+setLayoutFieldsReadOnly = 0
+
+# cat=records/enable/105; type=boolean; label=LLL:EXT:wdb_news_snapin/Resources/Private/Language/locallang_be.xlf:extmng.setLayoutAreaFieldsReadOnly
+setLayoutAreaFieldsReadOnly = 0
+
+# cat=records/enable/106; type=boolean; label=LLL:EXT:wdb_news_snapin/Resources/Private/Language/locallang_be.xlf:extmng.uniqueLayoutAreaKeys
+uniqueLayoutAreaKeys = 0
+
+# cat=records/enable/107; type=boolean; label=LLL:EXT:wdb_news_snapin/Resources/Private/Language/locallang_be.xlf:extmng.restrictNewsToSysfolder
+restrictNewsToSysfolder = 0
+
+# cat=records/enable/108; type=options[LLL:EXT:wdb_news_snapin/Resources/Private/Language/locallang_be.xlf:extmng.layoutRestriction.none=none, LLL:EXT:wdb_news_snapin/Resources/Private/Language/locallang_be.xlf:extmng.layoutRestriction.current_pid=current_pid, LLL:EXT:wdb_news_snapin/Resources/Private/Language/locallang_be.xlf:extmng.layoutRestriction.sys_folder=sys_folder, LLL:EXT:wdb_news_snapin/Resources/Private/Language/locallang_be.xlf:extmng.layoutRestriction.siteroot=siteroot, LLL:EXT:wdb_news_snapin/Resources/Private/Language/locallang_be.xlf:extmng.layoutRestriction.rootlevel=rootlevel]; label=LLL:EXT:wdb_news_snapin/Resources/Private/Language/locallang_be.xlf:extmng.layoutRestriction
+layoutRestriction = none
+
+# cat=records/enable/109; type=options[LLL:EXT:wdb_news_snapin/Resources/Private/Language/locallang_be.xlf:extmng.layoutAreaRestriction.none=none, LLL:EXT:wdb_news_snapin/Resources/Private/Language/locallang_be.xlf:extmng.layoutAreaRestriction.current_pid=current_pid, LLL:EXT:wdb_news_snapin/Resources/Private/Language/locallang_be.xlf:extmng.layoutAreaRestriction.sys_folder=sys_folder, LLL:EXT:wdb_news_snapin/Resources/Private/Language/locallang_be.xlf:extmng.layoutAreaRestriction.siteroot=siteroot, LLL:EXT:wdb_news_snapin/Resources/Private/Language/locallang_be.xlf:extmng.layoutAreaRestriction.rootlevel=rootlevel]; label=LLL:EXT:wdb_news_snapin/Resources/Private/Language/locallang_be.xlf:extmng.layoutAreaRestriction
+layoutAreaRestriction = none
+
+## @TODO?:
+## LLL:EXT:wdb_news_snapin/Resources/Private/Language/locallang_be.xlf:extmng.layoutRestriction.pages_tsconfig=page_tsconfig,
+## --
+## LLL:EXT:wdb_news_snapin/Resources/Private/Language/locallang_be.xlf:extmng.layoutAreaRestriction.pages_tsconfig=pages_tsconfig,

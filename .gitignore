@@ -1,0 +1,8 @@
+Build/node_modules
+Build/*.zip
+Build/package-lock.json
+Build/test.html
+Classes/TCA/ItemsProcFunc/debug.html
+Configuration/FlexForms.zip
+Configuration/TCA/_overview.txt
+package-lock.json

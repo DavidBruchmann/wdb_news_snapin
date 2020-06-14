@@ -1,0 +1,1 @@
+page.includeCSS.tx_wdbnewssnapin = {$plugin.tx_wdbnewssnapin.settings.cssFile}

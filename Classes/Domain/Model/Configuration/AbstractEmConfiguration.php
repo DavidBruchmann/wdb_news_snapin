@@ -2,7 +2,8 @@
 
 namespace WDB\WdbNewsSnapin\Domain\Model\Configuration;
 
-use \TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Core\Authentication\BackendUserAuthentication;
 use WDB\WdbNewsSnapin\Domain\Repository\Configuration\EmConfigurationRepository;
 
 /**
@@ -14,6 +15,8 @@ use WDB\WdbNewsSnapin\Domain\Repository\Configuration\EmConfigurationRepository;
 
 /**
  * Extension Manager configuration
+ * Internal methods' names start with underscore '_', so there is no danger that they
+ * correlate with variable-names.
  */
 abstract class AbstractEmConfiguration
 {
@@ -33,47 +36,80 @@ abstract class AbstractEmConfiguration
         $configuration = $this->_getExtensionConfiguration($configuration);
         $this->_setProperties($configuration);
     }
-    
+
     protected function _getExtensionConfiguration(array $configuration) : array
     {
         if (empty($configuration)) {
-            $configuration = EmConfigurationRepository::getExtensionConfiguration();
+            $emConfigurationRepository = GeneralUtility::makeInstance(EmConfigurationRepository::class);
+            $configuration = $emConfigurationRepository->getExtensionConfiguration();
         }
         return $configuration;
     }
-    
+
     protected function _setProperties(array $configuration) : void
     {
         foreach ($configuration as $key => $value) {
-            $this->_assignProperty($key, $value);
+            $this->_setProperty($key, $value);
         }
     }
-    
+
+    /**
+     * @TODO: move messages into translation-files and adjust parameters in _log()::$beUserObj->writelog() accordingly
+     */
     protected function _setProperty($property, $value) : void
     {
         if (is_string($property) && is_scalar($value)) {
             $setter = $this->_getSetterMethod($property);
             if (
-                property_exists(__CLASS__, $property)
-                && in_array($setter, get_class_methods(__CLASS__))
+                array_key_exists(lcfirst($property), get_class_vars(get_class($this)))
+                && in_array($setter, get_class_methods($this))
             ) {
                 $this->$setter($value);
             } else {
-                // @TODO: write message in log + remove Exception
-                throw new \Exception('Method' . $setter . 'never exists.');
+                $message = 'Method ' . $setter . ' never exists in ' . get_class($this)
+                    . '. Check the definitions inside the file EXT:wdb_news_snapin/ext_conf_template.txt'
+                    . '. Any wrong extension-settings might have to be removed manually from LocalConfiguration.php afterwards.';
+                $this->_log($message);
             }
         } else {
-            // @TODO: write message in log
+            if (!is_string($property)) {
+                $this->_log('$property is no string in ' . __FILE__ . ':' . __LINE__);
+            }
+            if (!is_scalar($value)) {
+                $this->_log('value of property ' . $property . ' is no scalar in ' . __FILE__ . ':' . __LINE__);
+            }
         }
     }
-    
+
+    protected function _log($message)
+    {
+        $beUserObj = $this->_getBackendUser();
+        $beUserObj->writelog(4, 0, 1, 0, $message, []);
+        throw new \Exception($message);
+    }
+
+    protected function _getBackendUser()
+    {
+        if (empty($GLOBALS['BE_USER'])) {
+            // for writing a log-entry this is enough
+            $beUserObj = GeneralUtility::makeInstance(BackendUserAuthentication::class);
+            // if more is required:
+            // $beUserObj->start();
+        } else {
+            $beUserObj = $GLOBALS['BE_USER'];
+        }
+        return $beUserObj;
+    }
+
     protected function _getSetterMethod(string $property) : string
     {
-        return 'set' . GeneralUtility::underscoredToUpperCamelCase($property);
+        $setterMethod = 'set' . ucfirst($property);
+        return $setterMethod;
     }
-    
+
     protected function _getGetterMethod(string $property) : string
     {
-        return 'get' . GeneralUtility::underscoredToUpperCamelCase($property);
+        $getterMethod = 'get' . ucfirst($property);
+        return $getterMethod;
     }
 }

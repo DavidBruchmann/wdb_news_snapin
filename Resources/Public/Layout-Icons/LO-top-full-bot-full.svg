@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+<desc xmlns:basic="http://github.com/DavidBruchmann/wdb_news_snapin">
+  <basic:title>Icon for 'wdb_news_snapin'</basic:title>
+  <basic:descr>Icon for TYPO3 extension 'wdb_news_snapin'</basic:descr>
+  <basic:license>https://www.gnu.org/licenses/gpl-3.0.en.html</basic:license>
+</desc>
+<metadata>
+  <rdf:RDF xmlns:rdf = "http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs = "http://www.w3.org/2000/01/rdf-schema#" xmlns:dc = "http://purl.org/dc/elements/1.1/" >
+    <rdf:Description about="https://github.com/DavidBruchmann/wdb_news_snapin"
+      dc:title="Icon for 'wdb_news_snapin'"
+      dc:description="Icon for TYPO3 extension 'wdb_news_snapin'"
+      dc:publisher="Webdevelopment Barlian"
+      dc:date="2020-06-15"
+      dc:format="image/svg+xml"
+      dc:language="en"
+      dc:license="https://www.gnu.org/licenses/gpl-3.0.en.html">
+      <dc:creator>
+        <rdf:Bag>
+          <rdf:li>David Bruchmann</rdf:li>
+        </rdf:Bag>
+      </dc:creator>
+    </rdf:Description>
+  </rdf:RDF>
+</metadata>
+<defs>
+  <linearGradient id="Gradient1">
+    <stop offset="0%" stop-color="#B9B9B9" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#999"/>
+  </linearGradient>
+  <linearGradient id="Gradient2">
+    <stop offset="0%" stop-color="#999"/>
+    <stop offset="100%" stop-color="#B9B9B9" stop-opacity="0"/>
+  </linearGradient>
+</defs>
+<path id="bg" fill="#fff" d="M0 0h16v16H0V0z"/>
+<path id="frame" fill="#999" d="M0 0v16h16V0H0zM1 1h14v14H1V1z"/>
+<path id="topbar-full" fill="#800" d="M2 2h12v2H2v2z"/>
+<path id="line-1" fill="url(#Gradient1)" d="M2 5h12v1H2V1z"/>
+<path id="line-2" fill="url(#Gradient2)" d="M2 6h12v1H2V1z"/>
+<path id="line-3" fill="url(#Gradient1)" d="M2 7h12v1H2V1z"/>
+<path id="line-4" fill="url(#Gradient2)" d="M2 8h12v1H2V1z"/>
+<path id="line-5" fill="url(#Gradient1)" d="M2 9h12v1H2V1z"/>
+<path id="line-6" fill="url(#Gradient2)" d="M2 10h12v1H2V1z"/>
+<path id="bottombar-full" fill="#800" d="M2 12h12v2H2v2z"/>
+</svg>

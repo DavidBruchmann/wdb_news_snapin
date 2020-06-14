@@ -3,21 +3,22 @@
 namespace WDB\WdbNewsSnapin\Domain\Model;
 
 /*******************************************************************************************
+ * This file is part of the "wdb_news_snapin" Extension for TYPO3 CMS.
  *
- *  Copyright notice
+ * Copyright:
+ *   (c) 2020 David Bruchmann, Webdevelopment Barlian Indonesia <david.bruchmann@gmail.com>
  *
- *  (c) 2020 David Bruchmann , Webdevelopment Barlian Indonesia
+ * This copyright notice MUST APPEAR in all copies of the script!
  *
- *  All rights reserved
- *
- *  This copyright notice MUST APPEAR in all copies of the script!
+ * For the full copyright and license information, please read the
+ * LICENSE.txt file that was distributed with this source code.
  *******************************************************************************************/
-
 
 /**
  * NewsTtcontentRelation
  */
-class NewsTtcontentRelation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
+class NewsTtcontentRelation extends \WDB\WdbNewsSnapin\Domain\Model\AbstractWdbNewsSnapinEntity
+{
 
 	/**
      * txWdbnewssnapinSnapin
@@ -34,73 +35,72 @@ class NewsTtcontentRelation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEnti
 	protected $txWdbnewssnapinNews;
 
 	/**
-	 * ttcontentArea
+	 * layoutArea
 	 *
-	 * @var string # \WDB\WdbNewsSnapin\Domain\Model\News
+	 * @var \WDB\WdbNewsSnapin\Domain\Model\Layoutarea
 	 */
-    protected $ttcontentArea;
+    protected $layoutArea;
 
 	/**
-	 * ttcontentType
+	 * Set txWdbnewssnapinTtcontent
 	 *
-	 * @var string
-	 */
-    protected $ttcontentType;
-
-	/**
-	 * @return \WDB\WdbNewsSnapin\Domain\Model\Ttcontent
-	 */
-	public function getTxWdbnewssnapinTtcontent() {
-		return $this->txWdbnewssnapinTtcontent;
-	}
-
-	/**
 	 * @param \WDB\WdbNewsSnapin\Domain\Model\Ttcontent $txWdbnewssnapinTtcontent
 	 */
-	public function setTxWdbnewssnapinTtcontent($txWdbnewssnapinTtcontent) {
+	public function setTxWdbnewssnapinTtcontent($txWdbnewssnapinTtcontent) : void
+    {
 		$this->txWdbnewssnapinTtcontent = $txWdbnewssnapinTtcontent;
 	}
 
 	/**
-	 * @return \WDB\WdbNewsSnapin\Domain\Model\News
+     * Return txWdbnewssnapinTtcontent
+     *
+	 * @return \WDB\WdbNewsSnapin\Domain\Model\Ttcontent
 	 */
-	public function getTxWdbnewssnapinNews() {
-		return $this->txWdbnewssnapinNews;
+	public function getTxWdbnewssnapinTtcontent() : \WDB\WdbNewsSnapin\Domain\Model\Ttcontent
+    {
+		return $this->txWdbnewssnapinTtcontent;
 	}
 
 	/**
+	 * Set txWdbnewssnapinNews
+	 *
 	 * @param \WDB\WdbNewsSnapin\Domain\Model\News $txWdbnewssnapinNews
 	 */
-	public function setTxWdbnewssnapinNews($txWdbnewssnapinNews) {
+	public function setTxWdbnewssnapinNews($txWdbnewssnapinNews) : void
+    {
 		$this->txWdbnewssnapinNews = $txWdbnewssnapinNews;
 	}
 
 	/**
-	 * @return string # \WDB\WdbNewsSnapin\Domain\Model\News
+     * Return txWdbnewssnapinNews
+     *
+	 * @return \WDB\WdbNewsSnapin\Domain\Model\News
 	 */
-	public function ttcontentArea() {
-		return $this->ttcontentArea;
+	public function getTxWdbnewssnapinNews() : \WDB\WdbNewsSnapin\Domain\Model\News
+    {
+		return $this->txWdbnewssnapinNews;
 	}
 
 	/**
-	 * @param string $ttcontentArea # \WDB\WdbNewsSnapin\Domain\Model\News $ttcontentArea
+	 * Set layoutArea
+	 *
+	 * @param \WDB\WdbNewsSnapin\Domain\Model\Layoutarea $layoutArea
 	 */
-	public function setTtcontentArea($ttcontentArea) {
-		$this->ttcontentArea = $ttcontentArea;
+	public function setLayoutArea(\WDB\WdbNewsSnapin\Domain\Model\Layoutarea $layoutArea = null) : void
+    {
+        if (empty($layoutArea)) {
+            // @TODO
+        }
+		$this->layoutArea = $layoutArea;
 	}
 
 	/**
-	 * @return string
+     * Return layoutArea
+     *
+	 * @return \WDB\WdbNewsSnapin\Domain\Model\Layoutarea
 	 */
-	public function ttcontentType() {
-		return $this->ttcontentType;
+	public function getLayoutArea() : ?\WDB\WdbNewsSnapin\Domain\Model\Layoutarea
+    {
+		return $this->layoutArea;
 	}
-
-	/**
-	 * @param string $ttcontentType
-	 */
-	public function setTtcontentType($ttcontentType) {
-		$this->ttcontentType = $ttcontentType;
-	}
-
 }
