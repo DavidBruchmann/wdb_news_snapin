@@ -218,7 +218,7 @@ $tx_wdbnewssnapin_domain_model_layout = [
         'config'  => [
             'type' => 'text',
             'cols' => 40,
-            'rows' => 15,
+            'rows' => 4,
         ],
     ],
     'icon' => [
