@@ -71,7 +71,7 @@
 				<source>Content-element</source>
 			</trans-unit>
             <trans-unit id="tx_wdbnewssnapin_news_ttcontent_mm.layout_area">
-				<source>Layout-area (see https://forge.typo3.org/issues/91611)</source>
+				<source>Layout-area</source>
 			</trans-unit>
 
             <trans-unit id="tx_wdbnewssnapin_news_ttcontent_relation_layoutarea_mm.ctrl.title">

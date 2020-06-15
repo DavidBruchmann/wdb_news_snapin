@@ -23,8 +23,7 @@ class NewsTtcontentRelation
     /**
      * Alters the $params array without returning but changing it by reference
      *
-     * Currently this function is returning the correct data but has no impact due to issue:
-     * https://forge.typo3.org/issues/91611
+     * If this function is failing, see https://forge.typo3.org/issues/91611
      *
      * @params array
      */
@@ -51,7 +50,6 @@ class NewsTtcontentRelation
 
         // \TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump(['$params' => $params, '$rows' => $rows, '$newItems' => $newItems],__METHOD__.':'.__LINE__);
 
-        // unset($params['items']);
         $params['items'] = $newItems;
     }
 }
