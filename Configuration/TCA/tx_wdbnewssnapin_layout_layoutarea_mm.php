@@ -41,6 +41,9 @@ return [
     # 'origUid'                  => 't3_origuid',
     # 'editlock'                 => 'editlock',
     # 'descriptionColumn'        => 'description',
+
+    'rootLevel'                => -1,
+    // 'is_static'                => true,
     # 'enablecolumns'            => [
     #    'disabled'                  => 'hidden',
     #    'endtime'                   => 'endtime',

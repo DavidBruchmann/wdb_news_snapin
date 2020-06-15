@@ -17,5 +17,7 @@ call_user_func(
             'tt_content',
             'EXT:wdb_news_snapin/Resources/Private/Language/locallang_csh_tt_content.xlf'
         );
+
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile('wdb_news_snapin', 'Configuration/TypoScript', 'News Snapin');
     }
 );

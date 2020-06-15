@@ -36,16 +36,11 @@ $tx_wdbnewssnapin_domain_model_layout = [
     'transOrigDiffSourceField' => 'l10n_diffsource',
     'translationSource'        => 'l10n_source',
     'origUid'                  => 't3_origuid',
-    // 'editlock'                 => 'editlock',
-    // 'is_static'                => true,
-
-    // OPTIONS:
-    // 0 (false): Default. Can only exist in the page tree.
-    // 1 (true): Can only exist in the root.
-    // -1 Can exist in both page tree and root
-    // 'rootLevel'                => 1,
-
     'descriptionColumn'        => 'description',
+    // 'editlock'                 => 'editlock',
+
+    'rootLevel'                => -1,
+    // 'is_static'                => true,
     'enablecolumns'            => [
         'disabled'                  => 'hidden',
         'endtime'                   => 'endtime',

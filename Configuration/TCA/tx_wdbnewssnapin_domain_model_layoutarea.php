@@ -39,6 +39,9 @@ $tx_wdbnewssnapin_domain_model_layoutarea = [
     'languageField'            => 'sys_language_uid',
     'editlock'                 => 'editlock',
     'descriptionColumn'        => 'description',
+
+    'rootLevel'                => -1,
+    // 'is_static'                => true,
     'enablecolumns'            => [
         'disabled'                  => 'hidden',
         'endtime'                   => 'endtime',

@@ -51,7 +51,7 @@ class NewsTtcontentRelation
 
         // \TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump(['$params' => $params, '$rows' => $rows, '$newItems' => $newItems],__METHOD__.':'.__LINE__);
 
-        unset($params['items']);
+        // unset($params['items']);
         $params['items'] = $newItems;
     }
 }
