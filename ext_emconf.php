@@ -1,6 +1,6 @@
 <?php
 
-$EM_CONF[$_EXTKEY] = [
+$EM_CONF['wdb_news_snapin'] = [
     'title' => 'Snap-in for news',
     'description' => 'Snap-in for news',
     'category' => 'plugin',
