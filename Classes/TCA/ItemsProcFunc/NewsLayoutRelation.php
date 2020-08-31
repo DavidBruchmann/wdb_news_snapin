@@ -15,37 +15,38 @@ namespace WDB\WdbNewsSnapin\TCA\ItemsProcFunc;
  *******************************************************************************************/
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use WDB\WdbNewsSnapin\Domain\Repository\NewsTtcontentRelationRepository;
+use WDB\WdbNewsSnapin\Domain\Repository\NewsLayoutRelationRepository;
 use WDB\WdbNewsSnapin\Utility\ArrayUtility;
 
-class NewsTtcontentRelation extends AbstractItemsProcFunc
+/**
+ * Class with ItemsProcFunc for News,
+ * not required for TYPO3 version 9
+ */
+class NewsLayoutRelation extends AbstractItemsProcFunc
 {
     /**
      * @var string
      */
-    protected $defaultIconPath = 'EXT:wdb_news_snapin/Resources/Public/Area-Icons';
+    protected $defaultIconPath = 'EXT:wdb_news_snapin/Resources/Public/Layout-Icons';
 
     /**
      * Alters the $params array without returning but changing it by reference
      *
      * If this function is failing, see https://forge.typo3.org/issues/91611
      *
+     * @TODO rename method to getLayoutItems()
+     *
      * @params array
      */
-    public function getLayoutAreas(&$params) : void
+    public function getLayout(&$params) : void
     {
-        $repository = GeneralUtility::makeInstance(NewsTtcontentRelationRepository::class);
-        $iconTable  = 'tx_wdbnewssnapin_domain_model_layoutarea';
+        $repository = GeneralUtility::makeInstance(NewsLayoutRelationRepository::class);
+        $iconTable  = 'tx_wdbnewssnapin_domain_model_layout';
         $iconField  = $GLOBALS['TCA'][$iconTable]['ctrl']['selicon_field'];
-        $iconPath   = $this->getIconPath($iconTable, 'layoutAreaIconPath');
-        /*
-        // selicon_field_path exists only in TYPO3 version 9 but not in version 10
-        $iconPath   = $GLOBALS['TCA'][$iconTable]['ctrl']['selicon_field_path'];
-        $iconPath   = $iconPath ? $iconPath : 'EXT:wdb_news_snapin/Resources/Public/Area-Icons';
-        $iconPath   = rtrim($iconPath, '/') . '/';
-        */
+        $iconPath   = $this->getIconPath($iconTable, 'layoutIconPath');
+
         $uidArray   = ArrayUtility::getParamsItemsUidArray($params['items']);
-        $rows       = $repository->getLayoutAreaRecords($params, $iconTable, $iconField, $iconPath, $uidArray);
+        $rows       = $repository->getLayoutRecords($params, $iconTable, $iconField, $iconPath, $uidArray);
 
         $newItems   = [];
         $newItems   = !empty($params['config']['items']) ? $params['config']['items'] : [];

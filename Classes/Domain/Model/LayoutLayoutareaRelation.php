@@ -54,7 +54,7 @@ class LayoutLayoutareaRelation extends \WDB\WdbNewsSnapin\Domain\Model\AbstractW
      *
 	 * @return void
 	 */
-	protected function initStorageObjects()
+	public function initStorageObjects() : void
     {
 		$this->txWdbnewssnapinTtcontent = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 	}
@@ -64,7 +64,7 @@ class LayoutLayoutareaRelation extends \WDB\WdbNewsSnapin\Domain\Model\AbstractW
 	 *
 	 * @param \WDB\WdbNewsSnapin\Domain\Model\Layout $layout
 	 */
-    protected function setLayout(\WDB\WdbNewsSnapin\Domain\Model\Layout $layout) : void
+    public function setLayout(\WDB\WdbNewsSnapin\Domain\Model\Layout $layout = null) : void
     {
         $this->layout = $layout;
     }
@@ -72,9 +72,9 @@ class LayoutLayoutareaRelation extends \WDB\WdbNewsSnapin\Domain\Model\AbstractW
 	/**
 	 * Return layout
 	 *
-	 * @return \WDB\WdbNewsSnapin\Domain\Model\Layout
+	 * @return null | \WDB\WdbNewsSnapin\Domain\Model\Layout
 	 */
-    protected function getLayout() : \WDB\WdbNewsSnapin\Domain\Model\Layout
+    public function getLayout() : ?\WDB\WdbNewsSnapin\Domain\Model\Layout
     {
         return $this->layout;
     }
@@ -84,7 +84,7 @@ class LayoutLayoutareaRelation extends \WDB\WdbNewsSnapin\Domain\Model\AbstractW
 	 *
 	 * @param \WDB\WdbNewsSnapin\Domain\Model\Layoutarea $layoutarea
 	 */
-    protected function setLayoutarea(\WDB\WdbNewsSnapin\Domain\Model\Layoutarea $layoutarea) : void
+    public function setLayoutarea(\WDB\WdbNewsSnapin\Domain\Model\Layoutarea $layoutarea = null) : void
     {
         $this->layoutarea = $layoutarea;
     }
@@ -92,9 +92,9 @@ class LayoutLayoutareaRelation extends \WDB\WdbNewsSnapin\Domain\Model\AbstractW
 	/**
 	 * Return layoutarea
 	 *
-	 * @return \WDB\WdbNewsSnapin\Domain\Model\Layoutarea
+	 * @return null | \WDB\WdbNewsSnapin\Domain\Model\Layoutarea
 	 */
-    protected function getLayoutarea() : \WDB\WdbNewsSnapin\Domain\Model\Layoutarea
+    public function getLayoutarea() : ?\WDB\WdbNewsSnapin\Domain\Model\Layoutarea
     {
         return $this->layoutarea;
     }
@@ -104,7 +104,7 @@ class LayoutLayoutareaRelation extends \WDB\WdbNewsSnapin\Domain\Model\AbstractW
 	 *
 	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\WDB\WdbNewsSnapin\Domain\Model\Ttcontent> $txWdbnewssnapinTtcontent
 	 */
-    protected function setTxWdbnewssnapinTtcontent(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $txWdbnewssnapinTtcontent) : void
+    public function setTxWdbnewssnapinTtcontent(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $txWdbnewssnapinTtcontent = null) : void
     {
         $this->txWdbnewssnapinTtcontent = $txWdbnewssnapinTtcontent;
     }
@@ -132,9 +132,9 @@ class LayoutLayoutareaRelation extends \WDB\WdbNewsSnapin\Domain\Model\AbstractW
 	/**
 	 * Return ObjectStorage 'txWdbnewssnapinTtcontent'
 	 *
-	 * @return \WDB\WdbNewsSnapin\Domain\Model\Ttcontent
+	 * @return null | \WDB\WdbNewsSnapin\Domain\Model\Ttcontent
 	 */
-    protected function getTxWdbnewssnapinTtcontent() : \TYPO3\CMS\Extbase\Persistence\ObjectStorage
+    public function getTxWdbnewssnapinTtcontent() : ?\TYPO3\CMS\Extbase\Persistence\ObjectStorage
     {
         return $this->txWdbnewssnapinTtcontent;
     }

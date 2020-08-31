@@ -161,7 +161,7 @@ class Layout extends \WDB\WdbNewsSnapin\Domain\Model\AbstractWdbNewsSnapinEntity
     /**
 	 * Return news
 	 *
-     * @return \GeorgRinger\News\Domain\Model\News
+     * @return null | \GeorgRinger\News\Domain\Model\News
      */
     public function getNews() : ?\GeorgRinger\News\Domain\Model\News
     {
@@ -173,7 +173,7 @@ class Layout extends \WDB\WdbNewsSnapin\Domain\Model\AbstractWdbNewsSnapinEntity
 	 *
 	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\WDB\WdbNewsSnapin\Domain\Model\Layoutarea> $layoutArea
 	 */
-    public function setLayoutArea(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $layoutArea) : void
+    public function setLayoutArea(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $layoutArea = null) : void
     {
         $this->layoutArea = $layoutArea;
     }
@@ -201,9 +201,9 @@ class Layout extends \WDB\WdbNewsSnapin\Domain\Model\AbstractWdbNewsSnapinEntity
 	/**
 	 * Return ObjectStorage 'layoutArea'
 	 *
-	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
+	 * @return null | \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
-    public function getLayoutArea() : \TYPO3\CMS\Extbase\Persistence\ObjectStorage
+    public function getLayoutArea() : ?\TYPO3\CMS\Extbase\Persistence\ObjectStorage
     {
         return $this->layoutArea;
     }

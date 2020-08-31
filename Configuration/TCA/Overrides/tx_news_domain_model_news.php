@@ -1,5 +1,7 @@
 <?php
 
+defined('TYPO3_MODE') or die();
+
 /*******************************************************************************************
  * This file is part of the "wdb_news_snapin" Extension for TYPO3 CMS.
  *
@@ -11,8 +13,6 @@
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
  *******************************************************************************************/
-
-defined('TYPO3_MODE') or die();
 
 $ll = 'LLL:EXT:wdb_news_snapin/Resources/Private/Language/locallang_db.xlf:';
 
@@ -55,11 +55,12 @@ $fields = [
             'type'                => 'select',
             'renderType'          => 'selectSingle',
             'eval'                => 'required',
+            'foreign_table'       => 'tx_wdbnewssnapin_domain_model_layout',
+            'foreign_table_where' => ' AND tx_wdbnewssnapin_domain_model_layout.sys_language_uid IN (0,-1)',
+            'itemsProcFunc'       => 'WDB\WdbNewsSnapin\TCA\ItemsProcFunc\NewsLayoutRelation->getLayout',
             'items'               => [
                 [0 => ''],
             ],
-            'foreign_table'       => 'tx_wdbnewssnapin_domain_model_layout',
-            'foreign_table_where' => ' AND tx_wdbnewssnapin_domain_model_layout.sys_language_uid IN (0,-1)',
             'fieldWizard' => [
                 'selectIcons' => [
                     'disabled' => false,

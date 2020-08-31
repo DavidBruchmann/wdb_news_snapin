@@ -1,5 +1,7 @@
 <?php
 
+defined('TYPO3_MODE') or die();
+
 /*******************************************************************************************
  * This file is part of the "wdb_news_snapin" Extension for TYPO3 CMS.
  *
@@ -12,8 +14,6 @@
  * LICENSE.txt file that was distributed with this source code.
  *******************************************************************************************/
 
-defined('TYPO3_MODE') or die();
-
 $ll = 'LLL:EXT:wdb_news_snapin/Resources/Private/Language/locallang_db.xlf:';
 
 $configuration = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\WDB\WdbNewsSnapin\Domain\Model\Configuration\EmConfiguration::class);
@@ -23,30 +23,34 @@ $tx_wdbnewssnapin_domain_model_layout = [
     'title'                    => $ll . 'tx_wdbnewssnapin_domain_model_layout.ctrl.title',
     'label'                    => 'title',
     'iconfile'                 => 'EXT:wdb_news_snapin/Resources/Public/Icons/tx_wdbnewssnapin_domain_model_layout.svg',
-    'hideTable'                => false,
-    'selicon_field'            => 'icon',
-    'selicon_field_path'       => 'EXT:wdb_news_snapin/Resources/Public/Layout-Icons',
-    'tstamp'                   => 'tstamp',
-    'crdate'                   => 'crdate',
-    'cruser_id'                => 'cruser_id',
-    'delete'                   => 'deleted',
-    'sortby'                   => 'sorting',
-    'languageField'            => 'sys_language_uid',
-    'transOrigPointerField'    => 'l10n_parent',
-    'transOrigDiffSourceField' => 'l10n_diffsource',
-    'translationSource'        => 'l10n_source',
-    'origUid'                  => 't3_origuid',
     'descriptionColumn'        => 'description',
-    // 'editlock'                 => 'editlock',
-
-    'rootLevel'                => -1,
+    'hideTable'                => false,
     // 'is_static'                => true,
+    'rootLevel'                => -1,
+    'selicon_field'            => 'icon',
+    // #87937 deprecated: works in TYPO3 Version 9 only:
+    'selicon_field_path'       => 'EXT:wdb_news_snapin/Resources/Public/Layout-Icons',
+    // 'editlock'                 => 'editlock',
     'enablecolumns'            => [
         'disabled'                  => 'hidden',
         'endtime'                   => 'endtime',
         'fe_group'                  => 'fe_group',
         'starttime'                 => 'starttime',
     ],
+
+    'crdate'                   => 'crdate',
+    'cruser_id'                => 'cruser_id',
+    'delete'                   => 'deleted',
+    'sortby'                   => 'sorting',
+    'tstamp'                   => 'tstamp',
+
+    'languageField'            => 'sys_language_uid',
+    'origUid'                  => 't3_origuid',
+    'translationSource'        => 'l10n_source',
+    'transOrigDiffSourceField' => 'l10n_diffsource',
+    'transOrigPointerField'    => 'l10n_parent',
+
+    // #88143 - Version-related database field “t3ver_id” removed
   ],
   'columns' => [
     'sys_language_uid' => [
@@ -265,12 +269,12 @@ $tx_wdbnewssnapin_domain_model_layout = [
                     'delete'         => true,
                     'localize'       => true,
                 ],
-                # 'newRecordLinkAddTitle'           => 1,
-                # 'newRecordLinkPosition'           => 'both',
-                # 'levelLinksPosition'              => 'top',
-                # 'showSynchronizationLink'         => 1,
-                # 'showPossibleLocalizationRecords' => 1,
-                # 'showAllLocalizationLink'         => 1,
+                // 'newRecordLinkAddTitle'           => 1,
+                // 'newRecordLinkPosition'           => 'both',
+                // 'levelLinksPosition'              => 'top',
+                // 'showSynchronizationLink'         => 1,
+                // 'showPossibleLocalizationRecords' => 1,
+                // 'showAllLocalizationLink'         => 1,
             ],
         ],
     ],

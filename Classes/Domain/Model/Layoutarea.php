@@ -24,22 +24,22 @@ class Layoutarea extends \WDB\WdbNewsSnapin\Domain\Model\AbstractWdbNewsSnapinEn
      * @var string
      */
     protected $title = '';
-    
+
     /**
      * @var string
      */
     protected $description = '';
-    
+
     /**
      * @var string
      */
     protected $areaKey = '';
-    
+
     /**
      * @var string
      */
     protected $icon = '';
-    
+
     /**
      * @var string
      */
@@ -165,7 +165,7 @@ class Layoutarea extends \WDB\WdbNewsSnapin\Domain\Model\AbstractWdbNewsSnapinEn
     /**
      * Return layout
      *
-     * @return \WDB\WdbNewsSnapin\Domain\Model\LayoutLayoutareaRelation
+     * @return null | \WDB\WdbNewsSnapin\Domain\Model\LayoutLayoutareaRelation
      */
     public function getLayout() : ?\WDB\WdbNewsSnapin\Domain\Model\LayoutLayoutareaRelation
     {
@@ -205,7 +205,7 @@ class Layoutarea extends \WDB\WdbNewsSnapin\Domain\Model\AbstractWdbNewsSnapinEn
     /**
      * Return ObjectStorage 'news'
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
+     * @return null | \TYPO3\CMS\Extbase\Persistence\ObjectStorage
      */
     public function getNews() : ?\TYPO3\CMS\Extbase\Persistence\ObjectStorage
     {

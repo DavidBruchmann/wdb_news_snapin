@@ -2,14 +2,19 @@
 
 namespace WDB\WdbNewsSnapin\Domain\Model\Configuration;
 
-use WDB\WdbNewsSnapin\Domain\Model\Configuration\AbstractEmConfiguration;
-
-/**
+/*******************************************************************************************
  * This file is part of the "wdb_news_snapin" Extension for TYPO3 CMS.
+ *
+ * Copyright:
+ *   (c) 2020 David Bruchmann, Webdevelopment Barlian Indonesia <david.bruchmann@gmail.com>
+ *
+ * This copyright notice MUST APPEAR in all copies of the script!
  *
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
- */
+ *******************************************************************************************/
+
+use WDB\WdbNewsSnapin\Domain\Model\Configuration\AbstractEmConfiguration;
 
 /**
  * Extension Manager configuration
@@ -38,10 +43,16 @@ class EmConfiguration extends AbstractEmConfiguration
     protected $layoutAreaRestriction = '';
 
     /** @var array */
-    protected $_layoutRestrictionOptions = ['current_pid', 'sys_folder', 'siteroot', 'rootlevel'];  // 'page_tsconfig',
+    protected $_layoutRestrictionOptions = ['current_pid', 'rootlevel', 'siteroot', 'sys_folder'];  // 'page_tsconfig',
 
     /** @var array */
-    protected $_layoutAreaRestrictionOptions = ['current_pid', 'sys_folder', 'siteroot', 'rootlevel'];  // 'page_tsconfig',
+    protected $_layoutAreaRestrictionOptions = ['current_pid', 'rootlevel', 'siteroot', 'sys_folder'];  // 'page_tsconfig',
+
+    /** @var string */
+    protected $layoutIconPath = '';
+
+    /** @var string */
+    protected $layoutAreaIconPath = '';
 
     /**
      * In each news-article layout-areas with corresponding content can be defined.
@@ -120,7 +131,7 @@ class EmConfiguration extends AbstractEmConfiguration
      * setup and usage. The extension includes example data for both settings.
      * A non-unique setting reduces the amount of assigned news per LayoutArea siginifiantly as
      * each LayoutArea will usually only assigned to one Layout.
-     * 
+     *
      * @param bool $uniqueLayoutAreaKeys
      */
     public function setUniqueLayoutAreaKeys($uniqueLayoutAreaKeys) : void
@@ -141,7 +152,7 @@ class EmConfiguration extends AbstractEmConfiguration
      * content for inclusion is created, as the content is displayed twice then.
      * The simplest way to avoid this misbehavior is to allow news-articles only in sys-folders,
      * then created content for inclusion is automatically there too.
-     * 
+     *
      * @param bool $restrictNewsToSysfolder
      */
     public function setRestrictNewsToSysfolder($restrictNewsToSysfolder) : void
@@ -207,5 +218,37 @@ class EmConfiguration extends AbstractEmConfiguration
     public function getLayoutAreaRestriction() : string
     {
         return $this->layoutAreaRestriction;
+    }
+
+    /**
+     * @param string
+     */
+    public function setLayoutIconPath($layoutIconPath) : void
+    {
+        $this->layoutIconPath = $layoutIconPath;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLayoutIconPath() : string
+    {
+        return $this->layoutIconPath;
+    }
+
+    /**
+     * @param string
+     */
+    public function setLayoutAreaIconPath($layoutAreaIconPath) : void
+    {
+        $this->layoutAreaIconPath = $layoutAreaIconPath;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLayoutAreaIconPath() : string
+    {
+        return $this->layoutAreaIconPath;
     }
 }

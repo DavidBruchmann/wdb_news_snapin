@@ -50,7 +50,7 @@ class TtContent extends \GeorgRinger\News\Domain\Model\TtContent
 	 *
 	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\WDB\WdbNewsSnapin\Domain\Model\NewsTtcontentRelation> $txWdbnewssnapinNews
 	 */
-	public function setTxWdbnewssnapinNews(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $txWdbnewssnapinNews) : void
+	public function setTxWdbnewssnapinNews(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $txWdbnewssnapinNews = null) : void
     {
 		$this->txWdbnewssnapinNews = $txWdbnewssnapinNews;
 	}
@@ -78,9 +78,9 @@ class TtContent extends \GeorgRinger\News\Domain\Model\TtContent
 	/**
 	 * Return ObjectStorage 'txWdbnewssnapinNews'
 	 *
-	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\WDB\WdbNewsSnapin\Domain\Model\NewsTtcontentRelation> $txWdbnewssnapinNews
+	 * @return null | \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\WDB\WdbNewsSnapin\Domain\Model\NewsTtcontentRelation> $txWdbnewssnapinNews
 	 */
-	public function getTxWdbnewssnapinNews() : \TYPO3\CMS\Extbase\Persistence\ObjectStorage
+	public function getTxWdbnewssnapinNews() : ?\TYPO3\CMS\Extbase\Persistence\ObjectStorage
     {
 		return $this->txWdbnewssnapinNews;
 	}

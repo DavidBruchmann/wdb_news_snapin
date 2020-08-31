@@ -19,6 +19,12 @@ layoutRestriction = none
 # cat=records/enable/109; type=options[LLL:EXT:wdb_news_snapin/Resources/Private/Language/locallang_be.xlf:extmng.layoutAreaRestriction.none=none, LLL:EXT:wdb_news_snapin/Resources/Private/Language/locallang_be.xlf:extmng.layoutAreaRestriction.current_pid=current_pid, LLL:EXT:wdb_news_snapin/Resources/Private/Language/locallang_be.xlf:extmng.layoutAreaRestriction.sys_folder=sys_folder, LLL:EXT:wdb_news_snapin/Resources/Private/Language/locallang_be.xlf:extmng.layoutAreaRestriction.siteroot=siteroot, LLL:EXT:wdb_news_snapin/Resources/Private/Language/locallang_be.xlf:extmng.layoutAreaRestriction.rootlevel=rootlevel]; label=LLL:EXT:wdb_news_snapin/Resources/Private/Language/locallang_be.xlf:extmng.layoutAreaRestriction
 layoutAreaRestriction = none
 
+# cat=paths/enable/110; type=string; label=LLL:EXT:wdb_news_snapin/Resources/Private/Language/locallang_be.xlf:extmng.layoutIconPath
+layoutIconPath = EXT:wdb_news_snapin/Resources/Public/Layout-Icons
+
+# cat=paths/enable/111; type=string; label=LLL:EXT:wdb_news_snapin/Resources/Private/Language/locallang_be.xlf:extmng.layoutAreaIconPath
+layoutAreaIconPath = EXT:wdb_news_snapin/Resources/Public/Area-Icons
+
 ## @TODO?:
 ## LLL:EXT:wdb_news_snapin/Resources/Private/Language/locallang_be.xlf:extmng.layoutRestriction.pages_tsconfig=page_tsconfig,
 ## --

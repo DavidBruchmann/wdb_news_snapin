@@ -15,10 +15,11 @@ namespace WDB\WdbNewsSnapin\Domain\Model;
  *******************************************************************************************/
 
 /**
- * News
+ * News: Extending model for the news-extension
  *
- * IMPORTANT:
+ * >>>>>>>>>> >>>>>>>>>> >>>>>>>>>> >>>>>>>>>> IMPORTANT: <<<<<<<<<< <<<<<<<<<< <<<<<<<<<< <<<<<<<<<<
  * Changing styling in this class might break functionality even the styling is not standard conform
+ * >>>>>>>>>> >>>>>>>>>> >>>>>>>>>> >>>>>>>>>> /IMPORTANT <<<<<<<<<< <<<<<<<<<< <<<<<<<<<< <<<<<<<<<<
  */
 class News extends \GeorgRinger\News\Domain\Model\News {
 
@@ -37,16 +38,17 @@ class News extends \GeorgRinger\News\Domain\Model\News {
      */
     public function __construct() {
         // Added by \WDB\WdbNewsSnapin\Domain\Model\News (EXT:wdb_news_snapin)
-        $this->txWdbnewssnapinTtcontent = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $this->txWdbnewssnapinTtcontent = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage;
     }
 
     /**
      * Returns the txWdbnewssnapinTtcontent
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\WDB\WdbNewsSnapin\Domain\Model\NewsTtcontentRelation> $txWdbnewssnapinTtcontent
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\WDB\WdbNewsSnapin\Domain\Model\NewsTtcontentRelation> $txWdbnewssnapinTtcontent
+     * @return void
      */
-    public function getTxWdbnewssnapinTtcontent() {
-        return $this->txWdbnewssnapinTtcontent;
+    public function setTxWdbnewssnapinTtcontent(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $txWdbnewssnapinTtcontent = null) : void {
+        $this->txWdbnewssnapinTtcontent = $txWdbnewssnapinTtcontent;
     }
 
     /**
@@ -55,10 +57,7 @@ class News extends \GeorgRinger\News\Domain\Model\News {
      * @param WDB\WdbNewsSnapin\Domain\Model\TtContent $txWdbnewssnapinSnapinToAdd   The txWdbnewssnapinTtcontent to add
      * @return void
      */
-    public function addTxWdbnewssnapinTtcontent(\WDB\WdbNewsSnapin\Domain\Model\TtContent $txWdbnewssnapinTtcontentToAdd) {
-        if ($this->txWdbnewssnapinTtcontent() === null) {
-            $this->txWdbnewssnapinTtcontent = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-        }
+    public function addTxWdbnewssnapinTtcontent(\WDB\WdbNewsSnapin\Domain\Model\TtContent $txWdbnewssnapinTtcontentToAdd) : void {
         $this->txWdbnewssnapinTtcontent->attach($txWdbnewssnapinTtcontentToAdd);
     }
 
@@ -68,27 +67,17 @@ class News extends \GeorgRinger\News\Domain\Model\News {
      * @param WDB\WdbNewsSnapin\Domain\Model\txWdbnewssnapinTtcontent $txWdbnewssnapinTtcontentToRemove   The txWdbnewssnapinTtcontent to be removed
      * @return void
      */
-    public function removeTxWdbnewssnapinTtcontent(\WDB\WdbNewsSnapin\Domain\Model\TtContent $txWdbnewssnapinTtcontentToRemove) {
+    public function removeTxWdbnewssnapinTtcontent(\WDB\WdbNewsSnapin\Domain\Model\TtContent $txWdbnewssnapinTtcontentToRemove) : void {
         $this->txWdbnewssnapinTtcontent->detach($txWdbnewssnapinTtcontentToRemove);
     }
 
     /**
      * Returns the txWdbnewssnapinTtcontent
      *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\WDB\WdbNewsSnapin\Domain\Model\NewsTtcontentRelation> $txWdbnewssnapinTtcontent
-     * @return void
+     * @return null | \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\WDB\WdbNewsSnapin\Domain\Model\NewsTtcontentRelation> $txWdbnewssnapinTtcontent
      */
-    public function setTxWdbnewssnapinTtcontent(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $txWdbnewssnapinTtcontent) {
-        $this->txWdbnewssnapinTtcontent = $txWdbnewssnapinTtcontent;
-    }
-
-    /**
-     * Returns the txWdbnewssnapinLayout
-     *
-     * @return \WDB\WdbNewsSnapin\Domain\Model\Layout
-     */
-    public function getTxWdbnewssnapinLayout() {
-        return $this->txWdbnewssnapinLayout;
+    public function getTxWdbnewssnapinTtcontent() : ?\TYPO3\CMS\Extbase\Persistence\ObjectStorage {
+        return $this->txWdbnewssnapinTtcontent;
     }
 
     /**
@@ -97,8 +86,17 @@ class News extends \GeorgRinger\News\Domain\Model\News {
      * @param \WDB\WdbNewsSnapin\Domain\Model\Layout $txWdbnewssnapinLayout
      * @return void
      */
-    public function setTxWdbnewssnapinLayout(\WDB\WdbNewsSnapin\Domain\Model\Layout $txWdbnewssnapinLayout) {
+    public function setTxWdbnewssnapinLayout(\WDB\WdbNewsSnapin\Domain\Model\Layout $txWdbnewssnapinLayout = null) : void {
         $this->txWdbnewssnapinLayout = $txWdbnewssnapinLayout;
+    }
+
+    /**
+     * Returns the txWdbnewssnapinLayout
+     *
+     * @return null | \WDB\WdbNewsSnapin\Domain\Model\Layout
+     */
+    public function getTxWdbnewssnapinLayout() : ?\WDB\WdbNewsSnapin\Domain\Model\Layout {
+        return $this->txWdbnewssnapinLayout;
     }
 
     /**
@@ -112,8 +110,8 @@ class News extends \GeorgRinger\News\Domain\Model\News {
      *
      * @return string
      */
-    public function getTtcontentIdList() {
-        return $this->getIdsOfTtconent();
+    public function getTtcontentIdList() : string {
+        return $this->getIdsOfTtconent(false);
     }
 
     /**
@@ -121,8 +119,8 @@ class News extends \GeorgRinger\News\Domain\Model\News {
      *
      * @return string
      */
-    public function getTranslatedTtcontentIdList() {
-        return $this->getIdsOfTtconent(false);
+    public function getTranslatedTtcontentIdList() : string {
+        return $this->getIdsOfTtconent(true);
     }
 
     /**
@@ -131,13 +129,13 @@ class News extends \GeorgRinger\News\Domain\Model\News {
      * @param bool $original
      * @return string
      */
-    protected function getIdsOfTtconent($original = true) {
+    protected function getIdsOfTtconent($localized = true) : string {
         $idList = [];
         $ttContent = $this->getTxWdbnewssnapinTtcontent();
         if ($ttContent) {
             foreach ($ttContent as $ttContent) {
                 if ($ttContent->getColPos() >= 0) {
-                    $idList[] = $original ? $ttContent->getUid() : $ttContent->_getProperty('_localizedUid');
+                    $idList[] = $localized ? $ttContent->_getProperty('_localizedUid') : $ttContent->getUid();
                 }
             }
         }
@@ -147,8 +145,7 @@ class News extends \GeorgRinger\News\Domain\Model\News {
     /**
      * @return string
      */
-    public function getTableName() : string
-    {
+    public function getTableName() : string {
         return 'tx_news_domain_model_news';
     }
 }

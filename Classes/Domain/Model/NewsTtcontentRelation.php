@@ -46,7 +46,7 @@ class NewsTtcontentRelation extends \WDB\WdbNewsSnapin\Domain\Model\AbstractWdbN
 	 *
 	 * @param \WDB\WdbNewsSnapin\Domain\Model\Ttcontent $txWdbnewssnapinTtcontent
 	 */
-	public function setTxWdbnewssnapinTtcontent($txWdbnewssnapinTtcontent) : void
+	public function setTxWdbnewssnapinTtcontent($txWdbnewssnapinTtcontent = null) : void
     {
 		$this->txWdbnewssnapinTtcontent = $txWdbnewssnapinTtcontent;
 	}
@@ -54,9 +54,9 @@ class NewsTtcontentRelation extends \WDB\WdbNewsSnapin\Domain\Model\AbstractWdbN
 	/**
      * Return txWdbnewssnapinTtcontent
      *
-	 * @return \WDB\WdbNewsSnapin\Domain\Model\Ttcontent
+	 * @return null | \WDB\WdbNewsSnapin\Domain\Model\Ttcontent
 	 */
-	public function getTxWdbnewssnapinTtcontent() : \WDB\WdbNewsSnapin\Domain\Model\Ttcontent
+	public function getTxWdbnewssnapinTtcontent() : ?\WDB\WdbNewsSnapin\Domain\Model\Ttcontent
     {
 		return $this->txWdbnewssnapinTtcontent;
 	}
@@ -66,7 +66,7 @@ class NewsTtcontentRelation extends \WDB\WdbNewsSnapin\Domain\Model\AbstractWdbN
 	 *
 	 * @param \WDB\WdbNewsSnapin\Domain\Model\News $txWdbnewssnapinNews
 	 */
-	public function setTxWdbnewssnapinNews($txWdbnewssnapinNews) : void
+	public function setTxWdbnewssnapinNews($txWdbnewssnapinNews = null) : void
     {
 		$this->txWdbnewssnapinNews = $txWdbnewssnapinNews;
 	}
@@ -74,9 +74,9 @@ class NewsTtcontentRelation extends \WDB\WdbNewsSnapin\Domain\Model\AbstractWdbN
 	/**
      * Return txWdbnewssnapinNews
      *
-	 * @return \WDB\WdbNewsSnapin\Domain\Model\News
+	 * @return null | \WDB\WdbNewsSnapin\Domain\Model\News
 	 */
-	public function getTxWdbnewssnapinNews() : \WDB\WdbNewsSnapin\Domain\Model\News
+	public function getTxWdbnewssnapinNews() : ?\WDB\WdbNewsSnapin\Domain\Model\News
     {
 		return $this->txWdbnewssnapinNews;
 	}
@@ -97,7 +97,7 @@ class NewsTtcontentRelation extends \WDB\WdbNewsSnapin\Domain\Model\AbstractWdbN
 	/**
      * Return layoutArea
      *
-	 * @return \WDB\WdbNewsSnapin\Domain\Model\Layoutarea
+	 * @return null | \WDB\WdbNewsSnapin\Domain\Model\Layoutarea
 	 */
 	public function getLayoutArea() : ?\WDB\WdbNewsSnapin\Domain\Model\Layoutarea
     {

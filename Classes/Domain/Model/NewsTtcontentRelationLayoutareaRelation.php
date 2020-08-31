@@ -40,7 +40,7 @@ class NewsTtcontentRelationLayoutareaRelation extends \WDB\WdbNewsSnapin\Domain\
      *
      * @param \WDB\WdbNewsSnapin\Domain\Model\NewsTtcontentRelation
      */
-    public function setRelation(\WDB\WdbNewsSnapin\Domain\Model\NewsTtcontentRelation $relation) : void
+    public function setRelation(\WDB\WdbNewsSnapin\Domain\Model\NewsTtcontentRelation $relation = null) : void
     {
         $this->relation = $relation;
     }
@@ -48,9 +48,9 @@ class NewsTtcontentRelationLayoutareaRelation extends \WDB\WdbNewsSnapin\Domain\
     /**
      * Return relation
      *
-     * @return \WDB\WdbNewsSnapin\Domain\Model\NewsTtcontentRelation
+     * @return null | \WDB\WdbNewsSnapin\Domain\Model\NewsTtcontentRelation
      */
-    public function getRelation() : \WDB\WdbNewsSnapin\Domain\Model\NewsTtcontentRelation
+    public function getRelation() : ?\WDB\WdbNewsSnapin\Domain\Model\NewsTtcontentRelation
     {
         return $this->relation;
     }
@@ -71,7 +71,7 @@ class NewsTtcontentRelationLayoutareaRelation extends \WDB\WdbNewsSnapin\Domain\
     /**
      * Return layoutArea
      *
-     * @return \WDB\WdbNewsSnapin\Domain\Model\Layoutarea
+     * @return null | \WDB\WdbNewsSnapin\Domain\Model\Layoutarea
      */
     public function getLayoutArea() : ?\WDB\WdbNewsSnapin\Domain\Model\Layoutarea
     {
@@ -83,7 +83,7 @@ class NewsTtcontentRelationLayoutareaRelation extends \WDB\WdbNewsSnapin\Domain\
      *
      * @param \WDB\WdbNewsSnapin\Domain\Model\Layout $layout
      */
-    public function setLayout(\WDB\WdbNewsSnapin\Domain\Model\Layout $layout) : void
+    public function setLayout(\WDB\WdbNewsSnapin\Domain\Model\Layout $layout = null) : void
     {
         $this->layout = $layout;
     }
@@ -91,9 +91,9 @@ class NewsTtcontentRelationLayoutareaRelation extends \WDB\WdbNewsSnapin\Domain\
     /**
      * Return layout
      *
-     * @return \WDB\WdbNewsSnapin\Domain\Model\Layout
+     * @return null | \WDB\WdbNewsSnapin\Domain\Model\Layout
      */
-    public function getLayout() : \WDB\WdbNewsSnapin\Domain\Model\Layout
+    public function getLayout() : ?\WDB\WdbNewsSnapin\Domain\Model\Layout
     {
         return $this->layout;
     }

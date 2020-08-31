@@ -2,16 +2,21 @@
 
 namespace WDB\WdbNewsSnapin\Domain\Model\Configuration;
 
-use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Core\Authentication\BackendUserAuthentication;
-use WDB\WdbNewsSnapin\Domain\Repository\Configuration\EmConfigurationRepository;
-
-/**
+/*******************************************************************************************
  * This file is part of the "wdb_news_snapin" Extension for TYPO3 CMS.
+ *
+ * Copyright:
+ *   (c) 2020 David Bruchmann, Webdevelopment Barlian Indonesia <david.bruchmann@gmail.com>
+ *
+ * This copyright notice MUST APPEAR in all copies of the script!
  *
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
- */
+ *******************************************************************************************/
+
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Core\Authentication\BackendUserAuthentication;
+use WDB\WdbNewsSnapin\Domain\Repository\Configuration\EmConfigurationRepository;
 
 /**
  * Extension Manager configuration
@@ -31,7 +36,7 @@ abstract class AbstractEmConfiguration
         $this->_init($configuration);
     }
 
-    public function _init(array $configuration = [])
+    public function _init(array $configuration = []) : void
     {
         $configuration = $this->_getExtensionConfiguration($configuration);
         $this->_setProperties($configuration);
@@ -81,14 +86,14 @@ abstract class AbstractEmConfiguration
         }
     }
 
-    protected function _log($message)
+    protected function _log($message) : void
     {
         $beUserObj = $this->_getBackendUser();
         $beUserObj->writelog(4, 0, 1, 0, $message, []);
         throw new \Exception($message);
     }
 
-    protected function _getBackendUser()
+    protected function _getBackendUser() : \TYPO3\CMS\Core\Authentication\BackendUserAuthentication
     {
         if (empty($GLOBALS['BE_USER'])) {
             // for writing a log-entry this is enough
