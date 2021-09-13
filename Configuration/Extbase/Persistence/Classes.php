@@ -64,8 +64,13 @@ return [
         ],
 	],
 
-	WDB\WdbNewsSnapin\Domain\Model\Ttcontent::class => [
+	WDB\WdbNewsSnapin\Domain\Model\TtContent::class => [
 		'tableName' => 'tt_content',
+        'properties' => [
+            'txWdbnewssnapinNews' => [
+                'fieldName' => 'tx_wdbnewssnapin_news'
+            ],
+        ],
 	],
 
 	WDB\WdbNewsSnapin\Domain\Model\News::class => [
