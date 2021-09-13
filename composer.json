@@ -1,7 +1,7 @@
 {
     "name": "wdb/wdb-news-snapin",
     "type": "typo3-cms-extension",
-    "description": "Extend EXT:news with some fields",
+    "description": "Extension for EXT:news to display additional content \"around\" a single news-article. In templates additional areas can be defined and each area can be filled with content-elements. Imagine news enriched with tables, diagrams, footnotes or any other kind of Content-Elements.",
     "keywords": [
         "TYPO3",
         "extension",
@@ -22,6 +22,11 @@
     "autoload": {
         "psr-4": {
             "WDB\\WdbNewsSnapin\\": "Classes"
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "wdb_news_snapin"
         }
     }
 }
