@@ -86,6 +86,9 @@ abstract class AbstractEmConfiguration
         }
     }
 
+    // @TODO: this looks fishy:
+    //  - severity / error levels are missing
+    //  - location in code is not put out standardized
     protected function _log($message) : void
     {
         $beUserObj = $this->_getBackendUser();
@@ -112,6 +115,7 @@ abstract class AbstractEmConfiguration
         return $setterMethod;
     }
 
+    // @TODO: is this required?
     protected function _getGetterMethod(string $property) : string
     {
         $getterMethod = 'get' . ucfirst($property);
