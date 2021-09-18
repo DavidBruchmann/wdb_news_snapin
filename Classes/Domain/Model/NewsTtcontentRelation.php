@@ -23,7 +23,7 @@ class NewsTtcontentRelation extends \WDB\WdbNewsSnapin\Domain\Model\AbstractWdbN
 	/**
      * txWdbnewssnapinSnapin
 	 *
-	 * @var \WDB\WdbNewsSnapin\Domain\Model\Ttcontent
+	 * @var \WDB\WdbNewsSnapin\Domain\Model\TtContent
 	 */
 	protected $txWdbnewssnapinTtcontent;
 
@@ -44,7 +44,7 @@ class NewsTtcontentRelation extends \WDB\WdbNewsSnapin\Domain\Model\AbstractWdbN
 	/**
 	 * Set txWdbnewssnapinTtcontent
 	 *
-	 * @param \WDB\WdbNewsSnapin\Domain\Model\Ttcontent $txWdbnewssnapinTtcontent
+	 * @param \WDB\WdbNewsSnapin\Domain\Model\TtContent $txWdbnewssnapinTtcontent
 	 */
 	public function setTxWdbnewssnapinTtcontent($txWdbnewssnapinTtcontent = null) : void
     {
@@ -54,9 +54,9 @@ class NewsTtcontentRelation extends \WDB\WdbNewsSnapin\Domain\Model\AbstractWdbN
 	/**
      * Return txWdbnewssnapinTtcontent
      *
-	 * @return null | \WDB\WdbNewsSnapin\Domain\Model\Ttcontent
+	 * @return null | \WDB\WdbNewsSnapin\Domain\Model\TtContent
 	 */
-	public function getTxWdbnewssnapinTtcontent() : ?\WDB\WdbNewsSnapin\Domain\Model\Ttcontent
+	public function getTxWdbnewssnapinTtcontent() : ?\WDB\WdbNewsSnapin\Domain\Model\TtContent
     {
 		return $this->txWdbnewssnapinTtcontent;
 	}

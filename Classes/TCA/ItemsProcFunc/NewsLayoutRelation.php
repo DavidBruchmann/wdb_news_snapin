@@ -34,11 +34,9 @@ class NewsLayoutRelation extends AbstractItemsProcFunc
      *
      * If this function is failing, see https://forge.typo3.org/issues/91611
      *
-     * @TODO rename method to getLayoutItems()
-     *
      * @params array
      */
-    public function getLayout(&$params) : void
+    public function getLayoutItems(&$params) : void
     {
         $repository = GeneralUtility::makeInstance(NewsLayoutRelationRepository::class);
         $iconTable  = 'tx_wdbnewssnapin_domain_model_layout';
@@ -48,7 +46,6 @@ class NewsLayoutRelation extends AbstractItemsProcFunc
         $uidArray   = ArrayUtility::getParamsItemsUidArray($params['items']);
         $rows       = $repository->getLayoutRecords($params, $iconTable, $iconField, $iconPath, $uidArray);
 
-        $newItems   = [];
         $newItems   = !empty($params['config']['items']) ? $params['config']['items'] : [];
         foreach ($rows as $key => $row) {
             $newItems[] = [
@@ -58,7 +55,7 @@ class NewsLayoutRelation extends AbstractItemsProcFunc
             ];
         }
 
-        #\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump(['$params' => $params, '$rows' => $rows, '$newItems' => $newItems],__METHOD__.':'.__LINE__);
+        # \TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump(['$params' => $params, '$rows' => $rows, '$newItems' => $newItems, [$iconTable, $iconField, $iconPath, $uidArray]],__METHOD__.':'.__LINE__);
 
         $params['items'] = $newItems;
     }

@@ -20,13 +20,13 @@ $ll = 'LLL:EXT:wdb_news_snapin/Resources/Private/Language/locallang_db.xlf:';
 
 return [
   'ctrl' => [
-    'title'                    => $ll . 'tx_wdbnewssnapin_news_ttcontent_relation_layoutarea_mm.ctrl.title',
-    'label'                    => 'uid_relation',
+    'title'                    => $ll . 'tx_wdbnewssnapin_news_ttcontent_mm.ctrl.title',
+    'label'                    => 'uid_ttcontent',
     // 'label_alt'                => '',
     // 'label_alt_force'          => true,
-    'iconfile'                 => 'EXT:wdb_news_snapin/Resources/Public/Icons/tx_wdbnewssnapin_news_ttcontent_relation_layoutarea_mm.svg',
+    'iconfile'                 => 'EXT:wdb_news_snapin/Resources/Public/Icons/tx_wdbnewssnapin_news_ttcontent_mm.svg',
     // 'descriptionColumn'        => 'description',
-    'hideTable'                => false,
+    'hideTable'                => true,
     // 'is_static'                => true,
     // 'rootLevel'                => -1,
     // 'selicon_field'            => 'icon',
@@ -78,7 +78,7 @@ return [
         'config'  => [
             'type' => 'group',
             'internal_type' => 'db',
-            'allowed' => 'tx_wdbnewssnapin_news_ttcontent_relation_layoutarea_mm',
+            'allowed' => 'tx_wdbnewssnapin_news_ttcontent_mm',
             'size' => 1,
             'maxitems' => 1,
             'minitems' => 0,
@@ -96,46 +96,68 @@ return [
             'default' => ''
         ]
     ],
-    'uid_relation' => [
-        'label'  => $ll . 'tx_wdbnewssnapin_news_ttcontent_relation_layoutarea_mm.uid_relation',
+    'uid_news' => [
+        'label'  => $ll . 'tx_wdbnewssnapin_news_ttcontent_mm.uid_news',
         'config' => [
             'type'                => 'select',
             'renderType'          => 'selectSingle',
-            'foreign_table'       => 'tx_wdbnewssnapin_news_ttcontent_mm',
-            'foreign_table_where' => ' AND tx_wdbnewssnapin_news_ttcontent_mm.sys_language_uid IN (0,-1)',
+            'foreign_table'       => 'tx_news_domain_model_news',
+            'foreign_table_where' => ' AND tx_news_domain_model_news.sys_language_uid IN (0,-1)',
             'size'                => 1,
             'minitems'            => 0,
             'maxitems'            => 1,
         ],
     ],
-    'uid_layout' => [
-        'label'  => $ll . 'tx_wdbnewssnapin_news_ttcontent_relation_layoutarea_mm.uid_layout',
+    'uid_ttcontent'   => [
+        'label'  => $ll . 'tx_wdbnewssnapin_news_ttcontent_mm.uid_ttcontent',
         'config' => [
             'type'                => 'select',
             'renderType'          => 'selectSingle',
-            'foreign_table'       => 'tx_wdbnewssnapin_domain_model_layout',
-            'foreign_table_where' => ' AND tx_wdbnewssnapin_domain_model_layout.sys_language_uid IN (0,-1)',
+            'foreign_table'       => 'tt_content',
+            'foreign_table_where' => ' AND tt_content.sys_language_uid IN (0,-1)',
             'size'                => 1,
             'minitems'            => 0,
             'maxitems'            => 1,
         ],
     ],
-    'uid_layoutarea'   => [
-        'label'  => $ll . 'tx_wdbnewssnapin_news_ttcontent_relation_layoutarea_mm.uid_layoutarea',
+    /*
+    'layout' => [ // select
+        'exclude' => true,
+        'label'   => $ll . 'tx_wdbnewssnapin_domain_model_layoutarea.layout',
+        'config'  => [
+            'type'                => 'select',
+            'renderType'          => 'selectSingle',
+            'foreign_table'       => 'tx_wdbnewssnapin_layout',
+            'foreign_table_where' => ' OR pid=0',
+            'fieldWizard'         => [
+                'selectIcons' => [
+                    'disabled' => false,
+                ],
+            ],
+        ],
+    ],
+    'layout_area'   => [
+        'label'  => $ll . 'tx_wdbnewssnapin_news_ttcontent_mm.layout_area',
         'config' => [
             'type'                => 'select',
             'renderType'          => 'selectSingle',
+            'eval'                => 'required',
+            'items'               => [
+                [0 => '']
+            ],
+            'itemsProcFunc'       => 'WDB\WdbNewsSnapin\TCA\ItemsProcFunc\NewsTtcontentRelation->getLayoutAreas',
             'foreign_table'       => 'tx_wdbnewssnapin_domain_model_layoutarea',
             'foreign_table_where' => ' AND tx_wdbnewssnapin_domain_model_layoutarea.sys_language_uid IN (0,-1)',
-            'size'                => 1,
-            'minitems'            => 0,
-            'maxitems'            => 1,
+            'fieldWizard' => [
+                'selectIcons' => [
+                    'disabled' => false,
+                ],
+            ],
         ],
     ],
-    // 'sorting_news'
-    // 'sorting_layoutarea'
+    */
   ],
   'types' => [
-    '0' => ['showitem' => 'uid_relation,uid_layout,uid_layoutarea'],
+    '0' => ['showitem' => 'uid_news,uid_ttcontent,layout'],
   ],
 ];

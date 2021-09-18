@@ -89,6 +89,8 @@ abstract class AbstractEmConfiguration
     // @TODO: this looks fishy:
     //  - severity / error levels are missing
     //  - location in code is not put out standardized
+    //  - @see https://www.tiobe.com/articles/2020/severity-levels-for-codingstandards/
+    //  - @see https://www.php.net/manual/en/errorfunc.constants.php
     protected function _log($message) : void
     {
         $beUserObj = $this->_getBackendUser();

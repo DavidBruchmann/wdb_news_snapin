@@ -204,7 +204,7 @@ $tx_wdbnewssnapin_domain_model_layout = [
         'config'  => [
             'type' => 'input',
             'readOnly' => false,
-            'eval' => 'required',
+            #'eval' => 'required',
         ],
     ],
     'layout_key' => [
@@ -213,7 +213,7 @@ $tx_wdbnewssnapin_domain_model_layout = [
         'config'  => [
             'type' => 'input',
             'readOnly' => false,
-            'eval' => 'required,unique,alphanum_x,lower',
+            'eval' => 'unique,alphanum_x,lower', // required,
         ],
     ],
     'description' => [

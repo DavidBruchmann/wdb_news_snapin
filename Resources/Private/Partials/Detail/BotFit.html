@@ -2,7 +2,7 @@
 <div class="bot-fit">
     <f:variable name="cObjects"><newssnapin:content layoutArea="bot-fit" ttContents="{newsItem.txWdbnewssnapinTtcontent}"/></f:variable>
     <f:for each="{cObjects}" as="cObject">
-        <f:cObject typoscriptObjectPath="tt_content.{cObject.CType}" data="{cObject}" />
+        <f:cObject typoscriptObjectPath="lib.tx_news.contentElementRendering">{cObject.uid}</f:cObject>
     </f:for>
 </div>
 <!-- /Partial BotFit end -->

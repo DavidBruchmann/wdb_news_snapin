@@ -204,7 +204,7 @@ $tx_wdbnewssnapin_domain_model_layoutarea = [
         'config'  => [
             'type' => 'input',
             'readOnly' => false,
-            'eval' => 'required',
+            //'eval' => 'required',
         ],
     ],
     'area_key' => [
@@ -213,7 +213,7 @@ $tx_wdbnewssnapin_domain_model_layoutarea = [
         'config'  => [
             'type' => 'input',
             'readOnly' => false,
-            'eval' => 'required,alphanum_x,lower' . ($configuration->getUniqueLayoutAreaKeys() ? ',unique' : ''),
+            'eval' => 'alphanum_x,lower' . ($configuration->getUniqueLayoutAreaKeys() ? ',unique' : ''), // required,
         ],
     ],
     'description' => [

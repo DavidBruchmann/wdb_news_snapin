@@ -26,7 +26,7 @@ return [
     // 'label_alt_force'          => true,
     'iconfile'                 => 'EXT:wdb_news_snapin/Resources/Public/Icons/tx_wdbnewssnapin_news_ttcontent_mm.svg',
     // 'descriptionColumn'        => 'description',
-    'hideTable'                => true,
+    'hideTable'                => false,
     // 'is_static'                => true,
     // 'rootLevel'                => -1,
     // 'selicon_field'            => 'icon',
@@ -102,9 +102,12 @@ return [
             'type'                => 'select',
             'renderType'          => 'selectSingle',
             'foreign_table'       => 'tx_news_domain_model_news',
-            'foreign_table_where' => ' AND tx_news_domain_model_news.sys_language_uid IN (0,-1)',
+            #'foreign_field'    => 'tx_wdbnewssnapin_ttcontent',
+            #'foreign_label'    => 'uid_ttcontent',
+            #'foreign_selector' => 'uid_ttcontent',
+            #'foreign_table_where' => ' AND tx_news_domain_model_news.sys_language_uid IN (0,-1)',
             'size'                => 1,
-            'minitems'            => 0,
+            #'minitems'            => 0,
             'maxitems'            => 1,
         ],
     ],
@@ -114,10 +117,45 @@ return [
             'type'                => 'select',
             'renderType'          => 'selectSingle',
             'foreign_table'       => 'tt_content',
-            'foreign_table_where' => ' AND tt_content.sys_language_uid IN (0,-1)',
+            #'foreign_field'    => 'tx_wdbnewssnapin_news',
+            #'foreign_label'    => 'uid_news',
+            #'foreign_selector' => 'uid_news',
+            #'foreign_table_where' => ' AND tt_content.sys_language_uid IN (0,-1)',
             'size'                => 1,
-            'minitems'            => 0,
+            #'minitems'            => 0,
             'maxitems'            => 1,
+            /*
+            'appearance'       => [
+                
+                #    'newRecordLinkAddTitle' => 1,
+                #    'useCombination' => true,
+                #    'collapseAll' => false,
+                #    'levelLinksPosition' => 'top',
+                #    'showSynchronizationLink' => 1,
+                #    'showPossibleLocalizationRecords' => 1,
+                #    'showAllLocalizationLink' => 1,
+                
+                'collapseAll'     => true,
+                'expandSingle'    => true,
+                'useCombination'  => true,
+                'useSortable'     => true,
+                  'showSynchronizationLink' => true,
+                  'showAllLocalizationLink' => true,
+                  'showPossibleLocalizationRecords' => true,
+                'enabledControls' => [
+                    'info'           => true,
+                    'new'            => true,
+                    'dragdrop'       => true,
+                    'sort'           => true,
+                    'hide'           => true,
+                    'delete'         => true,
+                    'localize'       => true,
+                ],
+            ],
+            'behaviour' => [
+                'allowLanguageSynchronization' => true,
+            ],
+            */
         ],
     ],
     'layout_area'   => [
@@ -125,7 +163,7 @@ return [
         'config' => [
             'type'                => 'select',
             'renderType'          => 'selectSingle',
-            'eval'                => 'required',
+            # 'eval'                => 'required',
             'items'               => [
                 [0 => '']
             ],
@@ -141,6 +179,6 @@ return [
     ],
   ],
   'types' => [
-    '0' => ['showitem' => 'uid_news,uid_ttcontent,layout_area'],
+    '0' => ['showitem' => 'uid_news, layout_area, uid_ttcontent'], // , layout_area
   ],
 ];

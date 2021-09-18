@@ -24,6 +24,11 @@ class NewsTtcontentRelation extends AbstractItemsProcFunc
      * @var string
      */
     protected $defaultIconPath = 'EXT:wdb_news_snapin/Resources/Public/Area-Icons';
+    
+    public function getNewTtcontentId(&$params)
+    {
+        \TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump(['func_get_args()' => func_get_args(), '$params' => $params, '$rows' => $rows, '$newItems' => $newItems],__METHOD__.':'.__LINE__);
+    }
 
     /**
      * Alters the $params array without returning but changing it by reference
