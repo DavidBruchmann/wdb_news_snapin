@@ -1,1 +1,36 @@
 page.includeCSS.tx_wdbnewssnapin = {$plugin.tx_wdbnewssnapin.settings.cssFile}
+
+##
+## These TypoScript Definitions are used in the fluid Partials
+## and can be adjusted, see the lines after "## example:"
+##
+lib.tx_wdbnewssnapin {
+  default {
+    contentElementRendering = RECORDS
+    contentElementRendering {
+      tables = tt_content
+      source.current = 1
+      dontCheckPid = 1
+      ## example:
+      # stdWrap.outerWrap = <div style="background:yellow;">|</div>
+    }
+  }
+
+  topFull < lib.tx_wdbnewssnapin.default
+  ## example:
+  # topFull.contentElementRendering.stdWrap.outerWrap = <div style="background:lime;">|</div>
+
+  topFit < lib.tx_wdbnewssnapin.default
+
+  bottomFull < lib.tx_wdbnewssnapin.default
+
+  bottomFit < lib.tx_wdbnewssnapin.default
+
+  leftFull < lib.tx_wdbnewssnapin.default
+
+  leftFit < lib.tx_wdbnewssnapin.default
+
+  rightFull < lib.tx_wdbnewssnapin.default
+
+  rightFit < lib.tx_wdbnewssnapin.default
+}
