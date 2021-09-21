@@ -17,6 +17,6 @@ Installation:
 Below you see a screenshot of one news detail in frontend:
  * the news is the block in the center
  * surrounding blocks are added with `wdb_news_snapin` and can be changed in layout and content
-   for every page
+   for every news article.
 
-![one news detail page in frontend with surrounding blocks added with `wdb_news_snapin`](./Documentation/Images/screenshot-fe.png "one news detail page in frontend with surrounding blocks added with `wdb_news_snapin`")
+![one news article in frontend with surrounding blocks added with `wdb_news_snapin`](./Documentation/Images/screenshot-fe.png "one news article in frontend with surrounding blocks added with `wdb_news_snapin`")
