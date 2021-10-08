@@ -27,7 +27,7 @@ class NewsTtcontentRelation extends AbstractItemsProcFunc
     
     public function getNewTtcontentId(&$params)
     {
-        \TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump(['func_get_args()' => func_get_args(), '$params' => $params, '$rows' => $rows, '$newItems' => $newItems],__METHOD__.':'.__LINE__);
+        # \TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump(['func_get_args()' => func_get_args(), '$params' => $params, '$rows' => $rows, '$newItems' => $newItems],__METHOD__.':'.__LINE__);
     }
 
     /**

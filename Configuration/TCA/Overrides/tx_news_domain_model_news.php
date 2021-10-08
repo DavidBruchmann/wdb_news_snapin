@@ -95,19 +95,10 @@ $fields = [
             'itemsProcFunc'       => 'WDB\WdbNewsSnapin\TCA\ItemsProcFunc\NewsTtcontentRelation->getNewTtcontentId',
             'maxitems'            => 9999,
             'appearance'       => [
-                
-                #    'newRecordLinkAddTitle' => 1,
-                #    'useCombination' => true,
-                #    'collapseAll' => false,
-                #    'levelLinksPosition' => 'top',
-                #    'showSynchronizationLink' => 1,
-                #    'showPossibleLocalizationRecords' => 1,
-                #    'showAllLocalizationLink' => 1,
-                
                 'collapseAll'     => true,
                 'expandSingle'    => true,
                 'newRecordLinkAddTitle' => false,
-                'levelLinksPosition' => 'top', // [top | bottom | both]
+                'levelLinksPosition' => 'top',
                 'useCombination'  => true,
                 'useSortable'     => true,
                 'showNewRecordLink' => true,
