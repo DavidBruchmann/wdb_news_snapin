@@ -210,6 +210,7 @@ $fields = [
             'items'               => [
                 [0 => ''],
             ],
+            'default' => 0,
             'fieldWizard' => [
                 'selectIcons' => [
                     'disabled' => false,
