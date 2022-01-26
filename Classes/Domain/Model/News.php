@@ -36,7 +36,8 @@ class News extends \GeorgRinger\News\Domain\Model\News {
     /**
      * __construct
      */
-    public function __construct() {
+    public function __construct()
+    {
         // Added by \WDB\WdbNewsSnapin\Domain\Model\News (EXT:wdb_news_snapin)
         $this->txWdbnewssnapinTtcontent = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage;
     }
