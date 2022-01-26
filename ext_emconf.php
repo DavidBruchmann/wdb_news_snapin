@@ -8,11 +8,11 @@ $EM_CONF['wdb_news_snapin'] = [
     'author_email' => '',
     'state' => 'stable',
     'clearCacheOnLoad' => true,
-    'version' => '1.0.0',
+    'version' => '1.1.0',
     'constraints' => [
         'depends' => [
-            'typo3' => '9.5.17-10.4.99',
-            'news' => '7.0.0-8.9.99',
+            'typo3' => '9.5.17-11.5.99',
+            'news' => '7.0.0-9.9.99',
         ],
         'conflicts' => [],
         'suggests' => [],

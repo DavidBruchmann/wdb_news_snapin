@@ -14,6 +14,10 @@ Installation:
  * Update database scheme in the TYPO3 installation.
  * Include static template on a page where the news-page and the news-storage-page are included.
 
+Important:
+For TYPO3 versions lower than 11 you've to adapt the pagebrowser in List.html for news perhaps.  
+With TYPO3-11 the widget API was removed and news-9.x never includes corresponding code anymore.  
+
 Below you see a screenshot of one news detail in frontend:
  * the news is the block in the center
  * surrounding blocks are added with `wdb_news_snapin` and can be changed in layout and content
